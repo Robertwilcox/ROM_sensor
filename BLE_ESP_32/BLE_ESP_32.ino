@@ -3,7 +3,7 @@
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
 
-// UUIDs for FPGA's BLE service and characteristics - Replace with actual UUIDs
+// UUIDs for FPGA's BLE service and characteristics
 #define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 
@@ -83,7 +83,7 @@ void setup() {
   // Start scanning
   BLEScan* pBLEScan = BLEDevice::getScan();
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
-  pBLEScan->setActiveScan(true); // Active scan uses more power, but get results faster
+  pBLEScan->setActiveScan(true); 
   pBLEScan->start(30, false); // Scan for 30 seconds and then stop
 }
 
@@ -98,16 +98,15 @@ void loop() {
     doConnect = false;
   }
 
-  // If we are connected to a peer BLE Server, update the characteristic each time we are reached
-  // with the current time since boot.
+  
   if (connected) {
-    String message = "Hello world!\n"; // Include the newline character as per your protocol
+    String message = "Hello world!\n";
     if (pRemoteCharacteristic->canWrite()) {
         pRemoteCharacteristic->writeValue(message.c_str(), message.length());
         Serial.println("Message 'Hello world!' sent to FPGA.");
     }
   }else if(doScan){
-    BLEDevice::getScan()->start(0);  // this is just eample to start scan after disconnect, 
+    BLEDevice::getScan()->start(0);
     doScan = false;
   }
 
