@@ -1,7 +1,7 @@
 /*
 * Authors: Ibrahim Binmahfood and Robert Wilcox
 * ECE544, Kravitz
-* Project 2, Top Module booleanfpga.sv - rtl module
+* Final Project, Top Module booleanfpga.sv - rtl module
 * 02/21/2024
 *
 * Platform: MicroBlaze AXI based Embedded System on Boolean board
@@ -10,9 +10,9 @@
 * 'embsys_i'. When asserting buttons BTN0 and BTN1, a reset signal is set HI.
 * In the block design 'embsys_i', the IP block Nexys4IO supports the Nexys A7
 * FGPA board. This board includes a 5th button BTNC. So for the Boolean board,
-* this is set low. Since the MPU-6050 sensor utilizes I2C, we introduce the
-* signals 'sclk_io' and 'sda_io'. Check the booleanfpga.xdc file for more
-* information on these signals.
+* this is set low. Since the Boolean board includes a BLE Radio chip connected
+* via UART, we introduce signals 'ble_uart_rx' and 'ble_uart_tx'. Check the 
+* booleanfpga.xdc file for more information on these signals.
 *
 */
 
@@ -21,10 +21,8 @@
 module booleanfpga
 (
     input  logic		 clk,       // 100 MHz CLK
-    input  logic         UART_rxd,  // UART Reciever
-    output logic         UART_txd,  // UART Transmitter
-    inout  logic         sclk_io,   // SCLK 
-    inout  logic         sda_io,    // SDA
+    input  logic         ble_uart_rx,  // BLE UART Reciever
+    output logic         ble_uart_tx,  // BLE UART Transmitter
     input  logic [15:0]	 sw,		// slide switches
     input  logic 		 btn0,	    // BTNU on Nexys A7
     input  logic 		 btn1,	    // BTNR on Nexys A7
@@ -72,12 +70,10 @@ module booleanfpga
         .dp(DP),
         .led(led),
         .resetn(btnCpuReset),
-        .sclk_io(sclk_io),      
-        .sda_io(sda_io),
         .seg({CG, CF, CE, CD, CC, CB, CA}),
         .sw(sw),
         .clk_100MHz(clk),
-        .usb_uart_rxd(UART_rxd),
-        .usb_uart_txd(UART_txd));
+        .usb_uart_rxd(ble_uart_rx),
+        .usb_uart_txd(ble_uart_tx));
 
 endmodule
