@@ -1,0 +1,6 @@
+15:50:05 **** Incremental Build of configuration Debug for project BLE_test_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+
+15:50:06 Build Finished (took 139ms)
+

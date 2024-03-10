@@ -1,0 +1,890 @@
+TRACE::2024-03-09.15:34:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened new HwDB with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2024-03-09.15:34:12::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor"
+		}]
+}
+TRACE::2024-03-09.15:34:12::SCWPlatform::Boot application domains not present, creating them
+TRACE::2024-03-09.15:34:12::SCWPlatform::Pure FPGA device, no boot application will be created.
+TRACE::2024-03-09.15:34:12::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor"
+		}]
+}
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWDomain::checking for install qemu data   : 
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-03-09.15:34:12::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::mss does not exists at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::Creating sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::Adding the swdes entry, created swdb D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss with des name D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::updating the scw layer changes to swdes at   D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::Writing mss at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:12::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp
+TRACE::2024-03-09.15:34:12::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2024-03-09.15:34:12::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2024-03-09.15:34:12::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp
+TRACE::2024-03-09.15:34:12::SCWMssOS::Forcing BSP Sources regeneration.
+TRACE::2024-03-09.15:34:14::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::Adding the swdes entry, mss present, able to open swdb D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-03-09.15:34:14::SCWMssOS::Writing the mss file completed D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:14::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:14::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:14::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:14::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:14::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:14::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"8.0",
+					"mssFile":	"",
+					"md5Digest":	"0e2b8965d07688510c65604962a823b4",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2024-03-09.15:34:14::SCWPlatform::Started generating the artifacts platform rom_sensor
+TRACE::2024-03-09.15:34:14::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-03-09.15:34:14::SCWPlatform::Started generating the artifacts for system configuration rom_sensor
+LOG::2024-03-09.15:34:14::SCWSystem::Checking the domain standalone_domain
+LOG::2024-03-09.15:34:14::SCWSystem::Not a boot domain 
+LOG::2024-03-09.15:34:14::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2024-03-09.15:34:14::SCWDomain::Generating domain artifcats
+TRACE::2024-03-09.15:34:14::SCWMssOS::Generating standalone artifcats
+TRACE::2024-03-09.15:34:14::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:14::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:14::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:14::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:14::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp
+TRACE::2024-03-09.15:34:14::SCWMssOS::Mss edits present, copying mssfile into export location D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:14::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-03-09.15:34:14::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-03-09.15:34:14::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2024-03-09.15:34:14::SCWMssOS::skipping the bsp build ... 
+TRACE::2024-03-09.15:34:14::SCWMssOS::Copying to export directory.
+TRACE::2024-03-09.15:34:14::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-03-09.15:34:14::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-03-09.15:34:14::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2024-03-09.15:34:14::SCWSystem::Completed Processing the sysconfig rom_sensor
+LOG::2024-03-09.15:34:14::SCWPlatform::Completed generating the artifacts for system configuration rom_sensor
+TRACE::2024-03-09.15:34:14::SCWPlatform::Started preparing the platform 
+TRACE::2024-03-09.15:34:14::SCWSystem::Writing the bif file for system config rom_sensor
+TRACE::2024-03-09.15:34:14::SCWSystem::dir created 
+TRACE::2024-03-09.15:34:14::SCWSystem::Writing the bif 
+TRACE::2024-03-09.15:34:14::SCWPlatform::Started writing the spfm file 
+TRACE::2024-03-09.15:34:14::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-03-09.15:34:15::SCWPlatform::Completed generating the platform
+TRACE::2024-03-09.15:34:15::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:34:15::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:34:15::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:15::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:15::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:15::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:15::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:15::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:15::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:15::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"8.0",
+					"mssFile":	"",
+					"md5Digest":	"0e2b8965d07688510c65604962a823b4",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-03-09.15:34:15::SCWPlatform::updated the xpfm file.
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"8.0",
+					"mssFile":	"",
+					"md5Digest":	"0e2b8965d07688510c65604962a823b4",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"8.0",
+					"mssFile":	"",
+					"md5Digest":	"0e2b8965d07688510c65604962a823b4",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:34:16::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:34:16::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Opened existing hwdb booleanfpga_0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:16::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:16::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWWriter::formatted JSON is {
+	"platformName":	"rom_sensor",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"rom_sensor",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"rom_sensor",
+	"systems":	[{
+			"systemName":	"rom_sensor",
+			"systemDesc":	"rom_sensor",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"rom_sensor",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"8.0",
+					"mssFile":	"",
+					"md5Digest":	"0e2b8965d07688510c65604962a823b4",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:34:16::SCWPlatform::Clearing the existing platform
+TRACE::2024-03-09.15:34:16::SCWSystem::Clearing the existing sysconfig
+TRACE::2024-03-09.15:34:16::SCWMssOS::Removing the swdes entry for  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:16::SCWSystem::Clearing the domains completed.
+TRACE::2024-03-09.15:34:16::SCWPlatform::Clearing the opened hw db.
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform location is D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Removing the HwDB with name D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:16::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:16::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened new HwDB with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWReader::Active system found as  rom_sensor
+TRACE::2024-03-09.15:34:17::SCWReader::Handling sysconfig rom_sensor
+TRACE::2024-03-09.15:34:17::SCWDomain::checking for install qemu data   : 
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:17::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-03-09.15:34:17::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-03-09.15:34:17::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:34:17::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:34:17::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:34:17::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:34:17::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-03-09.15:34:17::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:34:17::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:34:17::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:34:17::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:34:17::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:34:17::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:34:17::SCWReader::No isolation master present  
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened new HwDB with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWReader::Active system found as  rom_sensor
+TRACE::2024-03-09.15:35:15::SCWReader::Handling sysconfig rom_sensor
+TRACE::2024-03-09.15:35:15::SCWDomain::checking for install qemu data   : 
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened existing hwdb booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened existing hwdb booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened existing hwdb booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened existing hwdb booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:35:15::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-03-09.15:35:15::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-03-09.15:35:15::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:35:15::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:35:15::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:35:15::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:35:15::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-03-09.15:35:15::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:35:15::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:35:15::SCWPlatform::Trying to set the existing hwdb with name booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Opened existing hwdb booleanfpga
+TRACE::2024-03-09.15:35:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:35:15::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:35:15::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-03-09.15:35:15::SCWReader::No isolation master present  

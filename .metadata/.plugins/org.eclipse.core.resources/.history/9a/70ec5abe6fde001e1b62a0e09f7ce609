@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <ctype.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "xuartlite_l.h"
+#include "xparameters.h"
+#include "platform.h"
+
+// Alias for UART Lite Peripheral 
+#define UART_BASEADDR           XPAR_AXI_UARTLITE_0_BASEADDR
+
+// Task Handles
+TaskHandle_t xHelloWorld = NULL;
+
+/**
+ * @brief The task function for receiving "hello world" over UART.
+ * 
+ * This task waits for the "hello world" command sent over UART from the ESP32.
+ * 
+ * @param pvParameters Parameters for the task, not used.
+ */
+void vHelloWorldTask(void *pvParameters) {
+    char buffer[12]; // Assuming "hello world" plus null terminator fits in 12 characters
+
+    for (;;) {
+        // Read characters from UART until "hello world" is received
+        int index = 0;
+        while (index < 11) { // Read up to 11 characters
+            buffer[index] = XUartLite_RecvByte(UART_BASEADDR);
+            buffer[index + 1] = '\0'; // Null terminate the string
+            if (index >= 10 || (index >= 5 && strncmp(buffer + index - 4, "world", 5) == 0)) {
+                // Check if "world" is received or the buffer is full
+                break;
+            }
+            index++;
+        }
+
+        // Print the received message
+        printf("Received: %s\n", buffer);
+    }
+}
+
+int main(void) {
+    // Initialize microblaze platform
+    init_platform();
+
+    // Create the FreeRTOS Task for receiving "hello world" over UART
+    xTaskCreate(vHelloWorldTask, "Hello World Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xHelloWorld);
+
+    // Start the Task Scheduler
+    vTaskStartScheduler();
+
+    // The scheduler should never return, but for safety, if it does, disable interrupts and cleanup
+    microblaze_disable_interrupts();
+    cleanup_platform();
+
+    return 0;
+}

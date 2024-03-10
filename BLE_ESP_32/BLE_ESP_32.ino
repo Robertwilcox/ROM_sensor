@@ -1,3 +1,5 @@
+// https://www.instructables.com/ESP32-BLE-Android-App-Arduino-IDE-AWESOME/ code based off here, cite later
+
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEScan.h>

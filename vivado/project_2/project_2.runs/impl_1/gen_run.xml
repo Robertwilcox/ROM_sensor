@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1710029504">
+  <File Type="ROUTE-PWR" Name="bidirec_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="bidirec.tcl"/>
+  <File Type="BITSTR-MMI" Name="bidirec.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="bidirec_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="bidirec_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="bidirec_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="bidirec_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="bidirec_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="bidirec_opt.dcp"/>
+  <File Type="OPT-DRC" Name="bidirec_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="bidirec.hwdef"/>
+  <File Type="PWROPT-DCP" Name="bidirec_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="bidirec_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="bidirec_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="bidirec_placed.dcp"/>
+  <File Type="PLACE-IO" Name="bidirec_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="bidirec_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="bidirec_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="bidirec_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="bidirec_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="bidirec_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="bidirec_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="bidirec.bin"/>
+  <File Type="PLACE-TIMING" Name="bidirec_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="bidirec_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="bidirec.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="bidirec_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="bidirec_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="bidirec_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="bidirec.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="bidirec_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="bidirec_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="bidirec_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="bidirec_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="bidirec_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="bidirec_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="bidirec_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="bidirec_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="bidirec_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="bidirec_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="bidirec_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="bidirec_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="bidirec_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="bidirec_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="bidirec_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="bidirec_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="bidirec_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="bidirec_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="bidirec_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="bidirec_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="bidirec_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="bidirec_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="bidirec_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="bidirec_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="bidirec_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="bidirec_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="bidirec_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="bidirec.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="bidirec_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="bidirec_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="bidirec.nky"/>
+  <File Type="BITSTR-BMM" Name="bidirec_bd.bmm"/>
+  <File Type="PDI-FILE" Name="bidirec.pdi"/>
+  <File Type="RCFI_FILE" Name="bidirec.rcfi"/>
+  <File Type="CFI_FILE" Name="bidirec.cfi"/>
+  <File Type="RNPI_FILE" Name="bidirec.rnpi"/>
+  <File Type="NPI_FILE" Name="bidirec.npi"/>
+  <File Type="RBD_FILE" Name="bidirec.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="bidirec.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="bidirec.sysdef"/>
+  <File Type="BG-BGN" Name="bidirec.bgn"/>
+  <File Type="BG-DRC" Name="bidirec.drc"/>
+  <File Type="RDI-RDI" Name="bidirec.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="bidirec_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="bidirec_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Proj2_rel/bidirec.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Fresh_start/Proj2_rel/bidirec.v"/>
+        <Attr Name="ImportTime" Val="1708818375"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/embsys/embsys.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Fresh_start/project_1/project_1.srcs/sources_1/bd/embsys/embsys.bd"/>
+        <Attr Name="ImportTime" Val="1709164793"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Proj2_rel/booleanfpga.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Fresh_start/Proj2_rel/booleanfpga.sv"/>
+        <Attr Name="ImportTime" Val="1709150722"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Debug/rtos_app.elf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="G:/vitis_broken/rtos_app/Debug/rtos_app.elf"/>
+        <Attr Name="ImportTime" Val="1709527214"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="ScopedToRef" Val="embsys"/>
+        <Attr Name="ScopedToCell" Val="microblaze_0"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="bidirec"/>
+      <Option Name="TopLib" Val="xil_defaultlib"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/Proj2_rel/bidirec.v"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Proj2_rel/booleanfpga.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Fresh_start/Proj2_rel/booleanfpga.xdc"/>
+        <Attr Name="ImportTime" Val="1709150459"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/booleanfpga.dcp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Fresh_start/project_1/project_1.srcs/utils_1/imports/synth_1/booleanfpga.dcp"/>
+        <Attr Name="ImportTime" Val="1710026508"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_microblaze_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_dlmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_dlmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_ilmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_microblaze_0_axi_intc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_ilmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_mdm_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_clk_wiz_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_rst_clk_wiz_1_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_nexys4io_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_axi_timer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_axi_uartlite_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_axi_iic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_bidirec_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="embsys_bidirec_1_0"/>
+</GenRun>

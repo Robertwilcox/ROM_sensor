@@ -1,0 +1,1589 @@
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened new HwDB with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2024-03-09.15:36:01::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY"
+		}]
+}
+TRACE::2024-03-09.15:36:01::SCWPlatform::Boot application domains not present, creating them
+TRACE::2024-03-09.15:36:01::SCWPlatform::Pure FPGA device, no boot application will be created.
+TRACE::2024-03-09.15:36:01::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY"
+		}]
+}
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWDomain::checking for install qemu data   : 
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:01::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:01::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:01::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:01::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::mss does not exists at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::Creating sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::Adding the swdes entry, created swdb D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::updating the scw layer changes to swdes at   D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::Writing mss at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:01::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp
+TRACE::2024-03-09.15:36:01::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2024-03-09.15:36:01::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2024-03-09.15:36:01::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp
+TRACE::2024-03-09.15:36:01::SCWMssOS::Forcing BSP Sources regeneration.
+TRACE::2024-03-09.15:36:03::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::Adding the swdes entry, mss present, able to open swdb D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:36:03::SCWMssOS::Writing the mss file completed D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx_domain",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2024-03-09.15:36:03::SCWPlatform::Started generating the artifacts platform BLE_UART_ONLY
+TRACE::2024-03-09.15:36:03::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-03-09.15:36:03::SCWPlatform::Started generating the artifacts for system configuration BLE_UART_ONLY
+LOG::2024-03-09.15:36:03::SCWSystem::Checking the domain freertos10_xilinx_domain
+LOG::2024-03-09.15:36:03::SCWSystem::Not a boot domain 
+LOG::2024-03-09.15:36:03::SCWSystem::Started Processing the domain freertos10_xilinx_domain
+TRACE::2024-03-09.15:36:03::SCWDomain::Generating domain artifcats
+TRACE::2024-03-09.15:36:03::SCWMssOS::Generating standalone artifcats
+TRACE::2024-03-09.15:36:03::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp
+TRACE::2024-03-09.15:36:03::SCWMssOS::Mss edits present, copying mssfile into export location D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-03-09.15:36:03::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-03-09.15:36:03::SCWDomain::Skipping the build for domain :  freertos10_xilinx_domain
+TRACE::2024-03-09.15:36:03::SCWMssOS::skipping the bsp build ... 
+TRACE::2024-03-09.15:36:03::SCWMssOS::Copying to export directory.
+TRACE::2024-03-09.15:36:03::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-03-09.15:36:03::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-03-09.15:36:03::SCWSystem::Completed Processing the domain freertos10_xilinx_domain
+LOG::2024-03-09.15:36:03::SCWSystem::Completed Processing the sysconfig BLE_UART_ONLY
+LOG::2024-03-09.15:36:03::SCWPlatform::Completed generating the artifacts for system configuration BLE_UART_ONLY
+TRACE::2024-03-09.15:36:03::SCWPlatform::Started preparing the platform 
+TRACE::2024-03-09.15:36:03::SCWSystem::Writing the bif file for system config BLE_UART_ONLY
+TRACE::2024-03-09.15:36:03::SCWSystem::dir created 
+TRACE::2024-03-09.15:36:03::SCWSystem::Writing the bif 
+TRACE::2024-03-09.15:36:03::SCWPlatform::Started writing the spfm file 
+TRACE::2024-03-09.15:36:03::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-03-09.15:36:03::SCWPlatform::Completed generating the platform
+TRACE::2024-03-09.15:36:03::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:03::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:03::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:03::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:03::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:03::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:03::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:03::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:03::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx_domain",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-03-09.15:36:03::SCWPlatform::updated the xpfm file.
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx_domain",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx on microblaze_0",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:36:04::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_1
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx on microblaze_0",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:36:04::SCWPlatform::Clearing the existing platform
+TRACE::2024-03-09.15:36:04::SCWSystem::Clearing the existing sysconfig
+TRACE::2024-03-09.15:36:04::SCWMssOS::Removing the swdes entry for  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWSystem::Clearing the domains completed.
+TRACE::2024-03-09.15:36:04::SCWPlatform::Clearing the opened hw db.
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform location is D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Removing the HwDB with name D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened new HwDB with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWReader::Active system found as  BLE_UART_ONLY
+TRACE::2024-03-09.15:36:04::SCWReader::Handling sysconfig BLE_UART_ONLY
+TRACE::2024-03-09.15:36:04::SCWDomain::checking for install qemu data   : 
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:36:04::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:36:04::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:04::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:04::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-03-09.15:36:04::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:04::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:04::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:04::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:04::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:04::SCWReader::No isolation master present  
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:35::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:35::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::In reload Mss file.
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:35::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:35::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:36:35::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:36:35::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:36:35::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:36:35::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:35::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:35::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:35::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:35::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:35::SCWMssOS::Removing the swdes entry for  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:40::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:40::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:40::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:40::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:40::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:40::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:40::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:40::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:40::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:40::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:40::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:40::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:40::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:40::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:40::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:36:40::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:36:40::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:54::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:54::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:54::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:54::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:54::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:54::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:54::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:54::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:36:54::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:36:54::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:36:54::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:36:54::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:36:54::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:36:54::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:37:11::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:37:11::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx on microblaze_0",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"129f3a66ea6543d196504384fff9a67b",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"freertos10_xilinx":	{
+							"total_heap_size":	"8192",
+							"use_mutexes":	"true",
+							"libOptionNames":	["total_heap_size", "use_mutexes"]
+						},
+						"libsContainingOptions":	["freertos10_xilinx"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-03-09.15:37:11::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:37:11::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:37:11::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:11::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:11::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:11::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:11::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:11::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:11::SCWMssOS::Removing the swdes entry for  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::In reload Mss file.
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:37:12::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:37:12::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:37:12::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:37:12::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Removing the swdes entry for  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:12::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:12::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:12::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:12::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:37:12::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:37:12::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:12::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp
+TRACE::2024-03-09.15:37:12::SCWMssOS::Forcing BSP Sources regeneration.
+KEYINFO::2024-03-09.15:37:13::SCWMssOS::Removing file D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp\system_0.mss
+LOG::2024-03-09.15:37:18::SCWPlatform::Started generating the artifacts platform BLE_UART_ONLY
+TRACE::2024-03-09.15:37:18::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-03-09.15:37:18::SCWPlatform::Started generating the artifacts for system configuration BLE_UART_ONLY
+LOG::2024-03-09.15:37:18::SCWSystem::Checking the domain freertos10_xilinx_domain
+LOG::2024-03-09.15:37:18::SCWSystem::Not a boot domain 
+LOG::2024-03-09.15:37:18::SCWSystem::Started Processing the domain freertos10_xilinx_domain
+TRACE::2024-03-09.15:37:18::SCWDomain::Generating domain artifcats
+TRACE::2024-03-09.15:37:18::SCWMssOS::Generating standalone artifcats
+TRACE::2024-03-09.15:37:18::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-03-09.15:37:18::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:18::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:18::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:18::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:18::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:18::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:18::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:18::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:18::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:18::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:18::SCWMssOS::No sw design opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::mss exists loading the mss file  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::Opened the sw design from mss  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::Adding the swdes entry D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss with des name system_0
+TRACE::2024-03-09.15:37:18::SCWMssOS::updating the scw layer about changes
+TRACE::2024-03-09.15:37:18::SCWMssOS::Opened the sw design.  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::Completed writing the mss file at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp
+TRACE::2024-03-09.15:37:18::SCWMssOS::Mss edits present, copying mssfile into export location D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:18::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-03-09.15:37:18::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-03-09.15:37:18::SCWDomain::Building the domain as part of full build :  freertos10_xilinx_domain
+TRACE::2024-03-09.15:37:18::SCWMssOS::doing bsp build ... 
+TRACE::2024-03-09.15:37:18::SCWMssOS::System Command Ran  D: & cd  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp & make 
+TRACE::2024-03-09.15:37:18::SCWMssOS::make --no-print-directory seq_libs
+
+TRACE::2024-03-09.15:37:18::SCWMssOS::"Running Make include in microblaze_0/libsrc/bram_v4_8/src"
+
+TRACE::2024-03-09.15:37:18::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-03-09.15:37:18::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+TRACE::2024-03-09.15:37:18::SCWMssOS::-Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:19::SCWMssOS::"Running Make include in microblaze_0/libsrc/cpu_v2_16/src"
+
+TRACE::2024-03-09.15:37:19::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_16/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-03-09.15:37:19::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+TRACE::2024-03-09.15:37:19::SCWMssOS::-Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:19::SCWMssOS::"Running Make include in microblaze_0/libsrc/freertos10_xilinx_v1_12/src"
+
+TRACE::2024-03-09.15:37:19::SCWMssOS::make -C microblaze_0/libsrc/freertos10_xilinx_v1_12/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=m
+TRACE::2024-03-09.15:37:19::SCWMssOS::b-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-s
+TRACE::2024-03-09.15:37:19::SCWMssOS::ections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:19::SCWMssOS::"includes"
+
+TRACE::2024-03-09.15:37:20::SCWMssOS::"Running Make include in microblaze_0/libsrc/iic_v3_9/src"
+
+TRACE::2024-03-09.15:37:20::SCWMssOS::make -C microblaze_0/libsrc/iic_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+TRACE::2024-03-09.15:37:20::SCWMssOS::_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
+TRACE::2024-03-09.15:37:20::SCWMssOS::Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:20::SCWMssOS::"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+
+TRACE::2024-03-09.15:37:20::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-03-09.15:37:20::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+TRACE::2024-03-09.15:37:20::SCWMssOS:: -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::"Running Make include in microblaze_0/libsrc/nexys4io_v1_0/src"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::make -C microblaze_0/libsrc/nexys4io_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-03-09.15:37:21::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+TRACE::2024-03-09.15:37:21::SCWMssOS::all -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+TRACE::2024-03-09.15:37:21::SCWMssOS::LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wal
+TRACE::2024-03-09.15:37:21::SCWMssOS::l -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-03-09.15:37:21::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+TRACE::2024-03-09.15:37:21::SCWMssOS::all -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::"Running Make libs in microblaze_0/libsrc/nexys4io_v1_0/src"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::make -C microblaze_0/libsrc/nexys4io_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-03-09.15:37:21::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+TRACE::2024-03-09.15:37:21::SCWMssOS:: -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:21::SCWMssOS::"Compiling nexys4IO..."
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::'Finished building libraries sequentially.'
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -j 14 --no-print-directory par_libs
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/bram_v4_8/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/cpu_v2_16/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_16/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-03-09.15:37:22::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+TRACE::2024-03-09.15:37:22::SCWMssOS::-Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-03-09.15:37:22::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+TRACE::2024-03-09.15:37:22::SCWMssOS::-Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/freertos10_xilinx_v1_12/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/freertos10_xilinx_v1_12/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=m
+TRACE::2024-03-09.15:37:22::SCWMssOS::b-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-s
+TRACE::2024-03-09.15:37:22::SCWMssOS::ections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/iic_v3_9/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/iic_v3_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+TRACE::2024-03-09.15:37:22::SCWMssOS::_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
+TRACE::2024-03-09.15:37:22::SCWMssOS::Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/intc_v3_15/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-03-09.15:37:22::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+TRACE::2024-03-09.15:37:22::SCWMssOS:: -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/nexys4io_v1_0/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"includes"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/nexys4io_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-03-09.15:37:22::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+TRACE::2024-03-09.15:37:22::SCWMssOS::all -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+TRACE::2024-03-09.15:37:22::SCWMssOS::LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wal
+TRACE::2024-03-09.15:37:22::SCWMssOS::l -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-03-09.15:37:22::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+TRACE::2024-03-09.15:37:22::SCWMssOS::all -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make libs in microblaze_0/libsrc/bram_v4_8/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-03-09.15:37:22::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+TRACE::2024-03-09.15:37:22::SCWMssOS::xtra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make libs in microblaze_0/libsrc/cpu_v2_16/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make libs in microblaze_0/libsrc/freertos10_xilinx_v1_12/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make libs in microblaze_0/libsrc/iic_v3_9/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_16/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-03-09.15:37:22::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+TRACE::2024-03-09.15:37:22::SCWMssOS::xtra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/freertos10_xilinx_v1_12/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-a
+TRACE::2024-03-09.15:37:22::SCWMssOS::r" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sect
+TRACE::2024-03-09.15:37:22::SCWMssOS::ions -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::"Running Make libs in microblaze_0/libsrc/intc_v3_15/src"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/iic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+TRACE::2024-03-09.15:37:22::SCWMssOS::AGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wex
+TRACE::2024-03-09.15:37:22::SCWMssOS::tra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:22::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+TRACE::2024-03-09.15:37:22::SCWMssOS::FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -W
+TRACE::2024-03-09.15:37:22::SCWMssOS::extra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:23::SCWMssOS::"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-03-09.15:37:23::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+TRACE::2024-03-09.15:37:23::SCWMssOS::_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
+TRACE::2024-03-09.15:37:23::SCWMssOS::Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:23::SCWMssOS::"Running Make libs in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-03-09.15:37:23::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-03-09.15:37:23::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+TRACE::2024-03-09.15:37:23::SCWMssOS:: -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::'Finished building libraries parallelly.'
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::make --no-print-directory archive
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/_exit.o microblaze_0/lib/errno.o microblaze_0/lib/fcntl.o microblaze_0/lib
+TRACE::2024-03-09.15:37:26::SCWMssOS::/hw_exception_handler.o microblaze_0/lib/inbyte.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_disa
+TRACE::2024-03-09.15:37:26::SCWMssOS::ble_exceptions.o microblaze_0/lib/microblaze_disable_icache.o microblaze_0/lib/microblaze_disable_interrupts.o microblaze_0/lib
+TRACE::2024-03-09.15:37:26::SCWMssOS::/microblaze_enable_dcache.o microblaze_0/lib/microblaze_enable_exceptions.o microblaze_0/lib/microblaze_enable_icache.o microbl
+TRACE::2024-03-09.15:37:26::SCWMssOS::aze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/microblaze_exception_handler.o microblaze_0/lib/microblaze_flush_cach
+TRACE::2024-03-09.15:37:26::SCWMssOS::e_ext.o microblaze_0/lib/microblaze_flush_cache_ext_range.o microblaze_0/lib/microblaze_flush_dcache.o microblaze_0/lib/microbl
+TRACE::2024-03-09.15:37:26::SCWMssOS::aze_flush_dcache_range.o microblaze_0/lib/microblaze_init_dcache_range.o microblaze_0/lib/microblaze_init_icache_range.o microb
+TRACE::2024-03-09.15:37:26::SCWMssOS::laze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/microblaze_invalidate_cache_ext.o microblaze_0/lib/microblaze_invalidate_
+TRACE::2024-03-09.15:37:26::SCWMssOS::cache_ext_range.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/lib/microblaze_invalidate_dcache_range.o microbl
+TRACE::2024-03-09.15:37:26::SCWMssOS::aze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/microblaze_invalidate_icache_range.o microblaze_0/lib/microblaze_scru
+TRACE::2024-03-09.15:37:26::SCWMssOS::b.o microblaze_0/lib/microblaze_selftest.o microblaze_0/lib/microblaze_sleep.o microblaze_0/lib/microblaze_update_dcache.o micr
+TRACE::2024-03-09.15:37:26::SCWMssOS::oblaze_0/lib/microblaze_update_icache.o microblaze_0/lib/outbyte.o microblaze_0/lib/print.o microblaze_0/lib/pvr.o microblaze_0
+TRACE::2024-03-09.15:37:26::SCWMssOS::/lib/xbram.o microblaze_0/lib/xbram_g.o microblaze_0/lib/xbram_intr.o microblaze_0/lib/xbram_selftest.o microblaze_0/lib/xbram_
+TRACE::2024-03-09.15:37:26::SCWMssOS::sinit.o microblaze_0/lib/xiic.o microblaze_0/lib/xiic_dyn_master.o microblaze_0/lib/xiic_g.o microblaze_0/lib/xiic_intr.o micro
+TRACE::2024-03-09.15:37:26::SCWMssOS::blaze_0/lib/xiic_l.o microblaze_0/lib/xiic_master.o microblaze_0/lib/xiic_multi_master.o microblaze_0/lib/xiic_options.o microb
+TRACE::2024-03-09.15:37:26::SCWMssOS::laze_0/lib/xiic_selftest.o microblaze_0/lib/xiic_sinit.o microblaze_0/lib/xiic_slave.o microblaze_0/lib/xiic_stats.o microblaze
+TRACE::2024-03-09.15:37:26::SCWMssOS::_0/lib/xil_assert.o microblaze_0/lib/xil_cache.o microblaze_0/lib/xil_clocking.o microblaze_0/lib/xil_exception.o microblaze_0/
+TRACE::2024-03-09.15:37:26::SCWMssOS::lib/xil_mem.o microblaze_0/lib/xil_misc_psreset_api.o microblaze_0/lib/xil_printf.o microblaze_0/lib/xil_sleepcommon.o microbla
+TRACE::2024-03-09.15:37:26::SCWMssOS::ze_0/lib/xil_testcache.o microblaze_0/lib/xil_testio.o microblaze_0/lib/xil_testmem.o microblaze_0/lib/xil_util.o microblaze_0/
+TRACE::2024-03-09.15:37:26::SCWMssOS::lib/xintc.o microblaze_0/lib/xintc_g.o microblaze_0/lib/xintc_intr.o microblaze_0/lib/xintc_l.o microblaze_0/lib/xintc_options.
+TRACE::2024-03-09.15:37:26::SCWMssOS::o microblaze_0/lib/xintc_selftest.o microblaze_0/lib/xinterrupt_wrap.o microblaze_0/lib/xio.o microblaze_0/lib/xplatform_info.o
+TRACE::2024-03-09.15:37:26::SCWMssOS:: microblaze_0/lib/xtmrctr.o microblaze_0/lib/xtmrctr_g.o microblaze_0/lib/xtmrctr_intr.o microblaze_0/lib/xtmrctr_l.o microblaz
+TRACE::2024-03-09.15:37:26::SCWMssOS::e_0/lib/xtmrctr_options.o microblaze_0/lib/xtmrctr_selftest.o microblaze_0/lib/xtmrctr_sinit.o microblaze_0/lib/xtmrctr_stats.o
+TRACE::2024-03-09.15:37:26::SCWMssOS:: microblaze_0/lib/xuartlite.o microblaze_0/lib/xuartlite_g.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/xuartlite_l.o m
+TRACE::2024-03-09.15:37:26::SCWMssOS::icroblaze_0/lib/xuartlite_selftest.o microblaze_0/lib/xuartlite_sinit.o microblaze_0/lib/xuartlite_stats.o
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::'Finished building libraries'
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::Copying to export directory.
+TRACE::2024-03-09.15:37:26::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-03-09.15:37:26::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-03-09.15:37:26::SCWSystem::Completed Processing the domain freertos10_xilinx_domain
+LOG::2024-03-09.15:37:26::SCWSystem::Completed Processing the sysconfig BLE_UART_ONLY
+LOG::2024-03-09.15:37:26::SCWPlatform::Completed generating the artifacts for system configuration BLE_UART_ONLY
+TRACE::2024-03-09.15:37:26::SCWPlatform::Started preparing the platform 
+TRACE::2024-03-09.15:37:26::SCWSystem::Writing the bif file for system config BLE_UART_ONLY
+TRACE::2024-03-09.15:37:26::SCWSystem::dir created 
+TRACE::2024-03-09.15:37:26::SCWSystem::Writing the bif 
+TRACE::2024-03-09.15:37:26::SCWPlatform::Started writing the spfm file 
+TRACE::2024-03-09.15:37:26::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-03-09.15:37:26::SCWPlatform::Completed generating the platform
+TRACE::2024-03-09.15:37:26::SCWMssOS::Saving the mss changes D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:26::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-03-09.15:37:26::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-03-09.15:37:26::SCWMssOS::Commit changes completed.
+TRACE::2024-03-09.15:37:26::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:26::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:26::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:26::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:26::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:26::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:26::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:26::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:26::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:26::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:26::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:26::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:26::SCWWriter::formatted JSON is {
+	"platformName":	"BLE_UART_ONLY",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"BLE_UART_ONLY",
+	"platHandOff":	"D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/booleanfpga.xsa",
+	"platIntHandOff":	"<platformDir>/hw/booleanfpga.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"BLE_UART_ONLY",
+	"systems":	[{
+			"systemName":	"BLE_UART_ONLY",
+			"systemDesc":	"BLE_UART_ONLY",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"BLE_UART_ONLY",
+			"sysActiveDom":	"freertos10_xilinx_domain",
+			"sysDefaultDom":	"freertos10_xilinx_domain",
+			"domains":	[{
+					"domainName":	"freertos10_xilinx_domain",
+					"domainDispName":	"freertos10_xilinx on microblaze_0",
+					"domainDesc":	"freertos10_xilinx_domain",
+					"processors":	"microblaze_0",
+					"os":	"freertos10_xilinx",
+					"sdxOs":	"freertos10_xilinx",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"1.12",
+					"mssFile":	"",
+					"md5Digest":	"23bab81a8c7709462fa88c8fb5674059",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"freertos10_xilinx":	{
+							"total_heap_size":	"8192",
+							"libOptionNames":	["total_heap_size"]
+						},
+						"libsContainingOptions":	["freertos10_xilinx"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-03-09.15:37:26::SCWPlatform::updated the xpfm file.
+TRACE::2024-03-09.15:37:27::SCWPlatform::Trying to open the hw design at D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:27::SCWPlatform::DSA given D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:27::SCWPlatform::DSA absoulate path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:27::SCWPlatform::DSA directory D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw
+TRACE::2024-03-09.15:37:27::SCWPlatform:: Platform Path D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/hw/booleanfpga.xsa
+TRACE::2024-03-09.15:37:27::SCWPlatform:: Unique name xilinx:boolean_board::0.0
+TRACE::2024-03-09.15:37:27::SCWPlatform::Trying to set the existing hwdb with name booleanfpga_2
+TRACE::2024-03-09.15:37:27::SCWPlatform::Opened existing hwdb booleanfpga_2
+TRACE::2024-03-09.15:37:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-03-09.15:37:27::SCWMssOS::Checking the sw design at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss
+TRACE::2024-03-09.15:37:27::SCWMssOS::DEBUG:  swdes dump  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss|system_0||
+D:/PSU/Winter_2024/544/fp/ROM_sensor/rom_sensor/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-03-09.15:37:27::SCWMssOS::Sw design exists and opened at  D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/microblaze_0/freertos10_xilinx_domain/bsp/system.mss

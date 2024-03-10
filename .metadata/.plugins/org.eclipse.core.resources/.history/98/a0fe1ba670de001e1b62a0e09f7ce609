@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <ctype.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "xuartlite_l.h"
+#include "xparameters.h"
+#include "platform.h"
+
+// Alias for UART Lite Peripheral 
+#define UART_BASEADDR           XPAR_AXI_UARTLITE_0_BASEADDR
+
+// Task Handles
+TaskHandle_t xPrintUART = NULL;
+
+/**
+ * @brief The task function for printing UART data.
+ * 
+ * This task continuously reads characters from UART and prints them.
+ * 
+ * @param pvParameters Parameters for the task, not used.
+ */
+void vPrintUARTTask(void *pvParameters) {
+    char buffer[2]; // Buffer to store received character plus null terminator
+
+    // Notify the user that the program is running
+    printf("UART Printing Program Running...\n");
+
+    for (;;) {
+        // Read character from UART
+        buffer[0] = XUartLite_RecvByte(UART_BASEADDR);
+        buffer[1] = '\0'; // Null terminate the string
+
+        // Print the received character
+        printf("%s", buffer);
+    }
+}
+
+int main(void) {
+    // Initialize microblaze platform
+    init_platform();
+
+    // Create the FreeRTOS Task for printing UART data
+    xTaskCreate(vPrintUARTTask, "Print UART Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xPrintUART);
+
+    // Start the Task Scheduler
+    vTaskStartScheduler();
+
+    // The scheduler should never return, but for safety, if it does, disable interrupts and cleanup
+    microblaze_disable_interrupts();
+    cleanup_platform();
+
+    return 0;
+}

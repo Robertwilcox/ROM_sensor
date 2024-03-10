@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdsproject="http://www.xilinx.com/sdsproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="BLE_test_system" platform="D:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/export/BLE_UART_ONLY/BLE_UART_ONLY.xpfm" platformUID="xilinx:boolean_board::0.0(custom)" sysConfig="BLE_UART_ONLY" runtime="C/C++" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.1580068264">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="BLE_test" domainName="freertos10_xilinx_domain" domainPrettyName="freertos10_xilinx_domain" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="BLE_test" domainName="freertos10_xilinx_domain" domainPrettyName="freertos10_xilinx_domain" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1670008504">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="BLE_test" domainName="freertos10_xilinx_domain" domainPrettyName="freertos10_xilinx_domain" appBuildConfig="Release"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

@@ -1,0 +1,23 @@
+Nothing to build in platform 'BLE_UART_ONLY'
+
+15:50:04 **** Incremental Build of configuration Debug for project BLE_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -ID:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/export/BLE_UART_ONLY/sw/BLE_UART_ONLY/freertos10_xilinx_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLE_test.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LD:/PSU/Winter_2024/544/fp/ROM_sensor/BLE_UART_ONLY/export/BLE_UART_ONLY/sw/BLE_UART_ONLY/freertos10_xilinx_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "BLE_test.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: BLE_test.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size BLE_test.elf  |tee "BLE_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107320	   1820	  11212	 120352	  1d620	BLE_test.elf
+'Finished building: BLE_test.elf.size'
+' '
+15:50:05 **** Incremental Build of configuration Debug for project BLE_test_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

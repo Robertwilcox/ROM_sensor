@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Mar  9 16:11:03 2024
+# Process ID: 56220
+# Current directory: D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log bidirec.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bidirec.tcl
+# Log file: D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/project_2.runs/synth_1/bidirec.vds
+# Journal file: D:/PSU/Winter_2024/544/fp/ROM_sensor/vivado/project_2/project_2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-T2LGR09, OS: Windows, CPU Frequency: 3394 MHz, CPU Physical cores: 16, Host memory: 34282 MB
+#-----------------------------------------------------------
+source bidirec.tcl -notrace
