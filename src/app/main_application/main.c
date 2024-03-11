@@ -21,7 +21,7 @@
 
 
 void vMonitorUART1Task(void *pvParameters) {
-    (void)pvParameters; // Unused parameter
+    (void)pvParameters; // Unuseds parameter
     char ch, c;
     char test1 = 'a';
     char test2 = 'b';
@@ -30,16 +30,16 @@ void vMonitorUART1Task(void *pvParameters) {
     for (;;) {
 
     	XUartLite_SendByte(UART1_BASEADDR, test1);
-    	xil_printf("Sending UART1: %c\r\n", test1);
+    	//xil_printf("Sending UART1: %c\r\n", test1);
 
     	XUartLite_SendByte(UART1_BASEADDR, newline);
-    	xil_printf("Sending UART1: %c\r\n", newline);
+    	//xil_printf("Sending UART1: %c\r\n", newline);
 
     	XUartLite_SendByte(UART0_BASEADDR, test2);
-    	xil_printf("Sending UART0: %c\r\n", test2);
+    	//xil_printf("Sending UART0: %c\r\n", test1);
 
     	XUartLite_SendByte(UART0_BASEADDR, newline);
-    	xil_printf("Sending UART0: %c\r\n", newline);
+    	//xil_printf("Sending UART0: %c\r\n", newline);
 
     	if (XUartLite_IsReceiveEmpty(UART1_BASEADDR) == FALSE) {
     	   ch = XUartLite_RecvByte(UART1_BASEADDR);
