@@ -19,31 +19,9 @@
 #define UART0_BASEADDR XPAR_AXI_UARTLITE_0_BASEADDR
 #define UART1_BASEADDR XPAR_AXI_UARTLITE_1_BASEADDR
 
-/**
- * @brief Task for reading from UART0 and sending the received characters to UART1.
- *
- * @param pvParameters Parameters for the task, not used.
- */
-/*void vUART0ToUART1TransferTask(void *pvParameters) {
-    (void)pvParameters; // Unused parameter
-    char ch;
 
-    for (;;) {
-        if (XUartLite_IsReceiveEmpty(UART0_BASEADDR) == FALSE) {
-            ch = XUartLite_RecvByte(UART0_BASEADDR);
-            XUartLite_SendByte(UART1_BASEADDR, ch);
-        }
-        taskYIELD();
-    }
-}*/
-
-/**
- * @brief Task for monitoring UART1 and printing any received data.
- *
- * @param pvParameters Parameters for the task, not used.
- */
 void vMonitorUART1Task(void *pvParameters) {
-    (void)pvParameters; // Unused parameter
+    (void)pvParameters; // Unuseds parameter
     char ch, c;
     char test1 = 'a';
     char test2 = 'b';
@@ -52,16 +30,16 @@ void vMonitorUART1Task(void *pvParameters) {
     for (;;) {
 
     	XUartLite_SendByte(UART1_BASEADDR, test1);
-    	xil_printf("Sending UART1: %c\r\n", test1);
+    	//xil_printf("Sending UART1: %c\r\n", test1);
 
     	XUartLite_SendByte(UART1_BASEADDR, newline);
-    	xil_printf("Sending UART1: %c\r\n", newline);
+    	//xil_printf("Sending UART1: %c\r\n", newline);
 
     	XUartLite_SendByte(UART0_BASEADDR, test2);
-    	xil_printf("Sending UART0: %c\r\n", test2);
+    	//xil_printf("Sending UART0: %c\r\n", test1);
 
     	XUartLite_SendByte(UART0_BASEADDR, newline);
-    	xil_printf("Sending UART0: %c\r\n", newline);
+    	//xil_printf("Sending UART0: %c\r\n", newline);
 
     	if (XUartLite_IsReceiveEmpty(UART1_BASEADDR) == FALSE) {
     	   ch = XUartLite_RecvByte(UART1_BASEADDR);
@@ -75,18 +53,12 @@ void vMonitorUART1Task(void *pvParameters) {
     }
 }
 
-/**
- * @brief Main function where execution begins.
- */
+
 int main(void) {
     // Initialize platform
     init_platform();
-    //int c = 8;
     xil_printf("Program started. Awaiting UART0 input...\r\n");
-    //XUartLite_SendByte(UART0_BASEADDR, c);
 
-    // Create tasks
-   // xTaskCreate(vUART0ToUART1TransferTask, "UART0toUART1 Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
     xTaskCreate(vMonitorUART1Task, "Monitor UART1 Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
 
     // Start the scheduler
