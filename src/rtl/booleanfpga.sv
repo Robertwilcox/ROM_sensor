@@ -2,7 +2,7 @@
 * Authors: Ibrahim Binmahfood and Robert Wilcox
 * ECE544, Kravitz
 * Final Project, Top Module booleanfpga.sv - rtl module
-* 02/21/2024
+* 03/10/2024
 *
 * Platform: MicroBlaze AXI based Embedded System on Boolean board
 * Description: This top level module incorporates the ports referenced from the
@@ -11,9 +11,9 @@
 * In the block design 'embsys_i', the IP block Nexys4IO supports the Nexys A7
 * FGPA board. This board includes a 5th button BTNC. So for the Boolean board,
 * this is set low. Since the Boolean board includes a BLE Radio chip connected
-* via UART, we introduce signals 'ble_uart_rx' and 'ble_uart_tx'. Check the 
-* booleanfpga.xdc file for more information on these signals.
-*
+* via UART and the UART through USB, we introduce signals 'ble_uart_rx', 
+* 'ble_uart_tx' and 'uart_rx','uart_tx'. Check the booleanfpga.xdc file for 
+* more information on these signals.
 */
 
 `timescale 1 ps / 1 ps
@@ -23,6 +23,8 @@ module booleanfpga
     input  logic		 clk,       // 100 MHz CLK
     input  logic         ble_uart_rx,  // BLE UART Reciever
     output logic         ble_uart_tx,  // BLE UART Transmitter
+    input  logic         uart_rx,   // UART Reciever
+    output logic         uart_tx,   // UART Transmitter
     input  logic [15:0]	 sw,		// slide switches
     input  logic 		 btn0,	    // BTNU on Nexys A7
     input  logic 		 btn1,	    // BTNR on Nexys A7
@@ -73,7 +75,9 @@ module booleanfpga
         .seg({CG, CF, CE, CD, CC, CB, CA}),
         .sw(sw),
         .clk_100MHz(clk),
-        .usb_uart_rxd(ble_uart_rx),
-        .usb_uart_txd(ble_uart_tx));
+        .usb_uart_rxd(uart_rx),
+        .usb_uart_txd(uart_tx),
+        .ble_uart_rxd(ble_uart_rx),
+        .ble_uart_txd(ble_uart_tx));
 
 endmodule
