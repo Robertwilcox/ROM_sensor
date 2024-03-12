@@ -55,6 +55,7 @@ TaskHandle_t xWorkSet = NULL;
 XIntc        irq;
 
 UserInputPtr user_input;
+WarmUpSetPtr warmup_set;
 
 int main(void) {
     // Initialize platform
@@ -180,7 +181,7 @@ void vWarmUpTask(void *pvParameters) {
 	print("DEBUG:Entered vWarmUpTask()\r\n");
 
 	for (;;){
-
+		WarmUpSet_LogRep(warmup_set);
 		user_input->warmup_done = true;
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
