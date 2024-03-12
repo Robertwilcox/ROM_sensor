@@ -21,10 +21,10 @@
 module booleanfpga
 (
     input  logic		 clk,       // 100 MHz CLK
-    input  logic         UART0_rxd,  // UART Reciever
-    output logic         UART0_txd,  // UART Transmitter
-    inout  logic         sclk_io,   // SCLK 
-    inout  logic         sda_io,    // SDA
+    input  logic         UART0_rxd,   // USB UART Reciever
+    output logic         UART0_txd,   // USB UART Transmitter
+    input  logic         UART1_rxd,   // PMOD A UART Reciever
+    output logic         UART1_txd,   // PMOD A UART Transmitter
     input  logic [15:0]	 sw,		// slide switches
     input  logic 		 btn0,	    // BTNU on Nexys A7
     input  logic 		 btn1,	    // BTNR on Nexys A7
@@ -36,28 +36,13 @@ module booleanfpga
 	output logic [7:0]	 AN,		// Anodes for 7-segment displays
 	output logic		 CA, CB, CC, CD, CE, CF, CG, DP,			    // Cathodes for first 4-digit displays
 	output logic		 CA_1, CB_1, CC_1, CD_1, CE_1, CF_1, CG_1, DP_1,	// Cathodes for second 4-digit display
-	input  logic         UART1_rxd,  
-    output logic         UART1_txd
  );
   
   wire btnCpuReset;
-  /*
-  wire WIRED_UART_RX; 
-  wire WIRED_UART_TX;
-  wire BLE_UART_RX;
-  wire BLE_UART_TX;
-*/
+
   // generate reset signal (reset is asserted low)
   assign btnCpuReset = ~(btn0 & btn1);
-  
-/*
-assign WIRED_UART_RX = (sw[0] == 1'b0) ? UART0_rxd : UART1_rxd;
-assign BLE_UART_RX = (sw[0] == 1'b0) ? UART1_rxd : UART0_rxd;
 
-assign UART0_txd = (sw[1] == 1'b0) ? WIRED_UART_TX : BLE_UART_TX;
-assign UART1_txd = (sw[1] == 1'b0) ? BLE_UART_TX : WIRED_UART_TX; 
-*/
-  
   // generate the cathode signals for the second 4 digit 7-segment display
   always @(posedge clk) begin
     CA_1 <= CA;
@@ -92,9 +77,9 @@ assign UART1_txd = (sw[1] == 1'b0) ? BLE_UART_TX : WIRED_UART_TX;
         .seg({CG, CF, CE, CD, CC, CB, CA}),
         .sw(sw),
         .clk_100MHz(clk),
-        .uart_0_rxd(UART0_rxd),
-        .uart_0_txd(UART0_txd),
-        .uart_1_rxd(UART1_rxd),
-        .uart_1_txd(UART1_txd));
+        .usb_uart_rxd(UART0_rxd),
+        .usb_uart_txd(UART0_txd),
+        .pmodA_uart_rxd(UART0_rxd),
+        .pmodA_uart_txd(UART1_txd));
 
 endmodule
