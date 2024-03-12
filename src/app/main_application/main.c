@@ -130,7 +130,7 @@ void vMenuTask(void *pvParameters) {
 			if (user_input->prev_lift_type == user_input->curr_lift_type) {
 				xil_printf("DEBUG:Lift Type: %d\tWarmUp Set Done: %s\r\n",
 						user_input->prev_lift_type,
-						user_input->prev_warmup_done ? "true" : "false");
+						user_input->warmup_done ? "true" : "false");
 
 				vTaskResume(xWorkSet);
 
