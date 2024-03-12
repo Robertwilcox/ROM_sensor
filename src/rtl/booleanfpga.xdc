@@ -85,8 +85,16 @@ set_property -dict {PACKAGE_PIN D1 IOSTANDARD LVCMOS33} [get_ports {CG_1}]
 set_property -dict {PACKAGE_PIN C1 IOSTANDARD LVCMOS33} [get_ports {DP_1}]
 
 # UART
-set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports {uart_rx}]
-set_property -dict {PACKAGE_PIN U11 IOSTANDARD LVCMOS33} [get_ports {uart_tx}]
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports {UART0_rxd}]
+set_property -dict {PACKAGE_PIN U11 IOSTANDARD LVCMOS33} [get_ports {UART0_txd}]
+
+# PMOD D pins N4 and L4 are sclk and sda
+set_property -dict {PACKAGE_PIN N4 IOSTANDARD LVCMOS33} [get_ports {sclk_io}]
+set_property -dict {PACKAGE_PIN L4 IOSTANDARD LVCMOS33} [get_ports {sda_io}]
+
+# Set Pull Ups HI for sclk and sda
+set_property PULLUP true [get_ports {sclk_io}]
+set_property PULLUP true [get_ports {sda_io}]
 
 #HDMI Signals
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD TMDS_33 } [get_ports {hdmi_clk_n}]
@@ -104,9 +112,13 @@ set_property -dict {PACKAGE_PIN U11 IOSTANDARD LVCMOS33} [get_ports {uart_tx}]
 #set_property -dict {PACKAGE_PIN N13 IOSTANDARD LVCMOS33} [get_ports {left_audio_out}]
 #set_property -dict {PACKAGE_PIN N14 IOSTANDARD LVCMOS33} [get_ports {right_audio_out}]
 
+# PMOD A Signals
+set_property -dict {PACKAGE_PIN A14 IOSTANDARD LVCMOS33} [get_ports {UART1_rxd}]    
+set_property -dict {PACKAGE_PIN C14 IOSTANDARD LVCMOS33} [get_ports {UART1_txd}]
+
 # BLE UART signals
-set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS33} [get_ports {ble_uart_tx}]
-set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS33} [get_ports {ble_uart_rx}]
+#set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS33} [get_ports {UART1_txd}]
+#set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS33} [get_ports {UART1_rxd}]
 #set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS33} [get_ports {ble_uart_rts}]
 #set_property -dict {PACKAGE_PIN G6 IOSTANDARD LVCMOS33} [get_ports {ble_uart_cts}]
 

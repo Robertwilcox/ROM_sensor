@@ -1,8 +1,8 @@
 /*
 * Authors: Ibrahim Binmahfood and Robert Wilcox
 * ECE544, Kravitz
-* Final Project, Top Module booleanfpga.sv - rtl module
-* 03/10/2024
+* Project 2, Top Module booleanfpga.sv - rtl module
+* 02/21/2024
 *
 * Platform: MicroBlaze AXI based Embedded System on Boolean board
 * Description: This top level module incorporates the ports referenced from the
@@ -10,10 +10,10 @@
 * 'embsys_i'. When asserting buttons BTN0 and BTN1, a reset signal is set HI.
 * In the block design 'embsys_i', the IP block Nexys4IO supports the Nexys A7
 * FGPA board. This board includes a 5th button BTNC. So for the Boolean board,
-* this is set low. Since the Boolean board includes a BLE Radio chip connected
-* via UART and the UART through USB, we introduce signals 'ble_uart_rx', 
-* 'ble_uart_tx' and 'uart_rx','uart_tx'. Check the booleanfpga.xdc file for 
-* more information on these signals.
+* this is set low. Since the MPU-6050 sensor utilizes I2C, we introduce the
+* signals 'sclk_io' and 'sda_io'. Check the booleanfpga.xdc file for more
+* information on these signals.
+*
 */
 
 `timescale 1 ps / 1 ps
@@ -21,10 +21,10 @@
 module booleanfpga
 (
     input  logic		 clk,       // 100 MHz CLK
-    input  logic         ble_uart_rx,  // BLE UART Reciever
-    output logic         ble_uart_tx,  // BLE UART Transmitter
-    input  logic         uart_rx,   // UART Reciever
-    output logic         uart_tx,   // UART Transmitter
+    input  logic         UART0_rxd,  // UART Reciever
+    output logic         UART0_txd,  // UART Transmitter
+    inout  logic         sclk_io,   // SCLK 
+    inout  logic         sda_io,    // SDA
     input  logic [15:0]	 sw,		// slide switches
     input  logic 		 btn0,	    // BTNU on Nexys A7
     input  logic 		 btn1,	    // BTNR on Nexys A7
@@ -35,13 +35,28 @@ module booleanfpga
 	output logic 		 RGB1_Blue, RGB1_Green, RGB1_Red,	// RGB2 on Nexys A7
 	output logic [7:0]	 AN,		// Anodes for 7-segment displays
 	output logic		 CA, CB, CC, CD, CE, CF, CG, DP,			    // Cathodes for first 4-digit displays
-	output logic		 CA_1, CB_1, CC_1, CD_1, CE_1, CF_1, CG_1, DP_1	// Cathodes for second 4-digit display
+	output logic		 CA_1, CB_1, CC_1, CD_1, CE_1, CF_1, CG_1, DP_1,	// Cathodes for second 4-digit display
+	input  logic         UART1_rxd,  
+    output logic         UART1_txd
  );
   
   wire btnCpuReset;
-
+  /*
+  wire WIRED_UART_RX; 
+  wire WIRED_UART_TX;
+  wire BLE_UART_RX;
+  wire BLE_UART_TX;
+*/
   // generate reset signal (reset is asserted low)
   assign btnCpuReset = ~(btn0 & btn1);
+  
+/*
+assign WIRED_UART_RX = (sw[0] == 1'b0) ? UART0_rxd : UART1_rxd;
+assign BLE_UART_RX = (sw[0] == 1'b0) ? UART1_rxd : UART0_rxd;
+
+assign UART0_txd = (sw[1] == 1'b0) ? WIRED_UART_TX : BLE_UART_TX;
+assign UART1_txd = (sw[1] == 1'b0) ? BLE_UART_TX : WIRED_UART_TX; 
+*/
   
   // generate the cathode signals for the second 4 digit 7-segment display
   always @(posedge clk) begin
@@ -72,12 +87,14 @@ module booleanfpga
         .dp(DP),
         .led(led),
         .resetn(btnCpuReset),
+        .sclk_io(sclk_io),      
+        .sda_io(sda_io),
         .seg({CG, CF, CE, CD, CC, CB, CA}),
         .sw(sw),
         .clk_100MHz(clk),
-        .usb_uart_rxd(uart_rx),
-        .usb_uart_txd(uart_tx),
-        .ble_uart_rxd(ble_uart_rx),
-        .ble_uart_txd(ble_uart_tx));
+        .uart_0_rxd(UART0_rxd),
+        .uart_0_txd(UART0_txd),
+        .uart_1_rxd(UART1_rxd),
+        .uart_1_txd(UART1_txd));
 
 endmodule
