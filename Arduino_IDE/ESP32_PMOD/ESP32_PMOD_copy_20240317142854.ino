@@ -12,6 +12,7 @@ HardwareSerial FPGA(1); // Use UART1 for communication
 #define SERVICE_UUID           "DF816183-E1F1-4BF9-8B7D-3B794FA03C03"
 #define CHARACTERISTIC_UUID_TX "AE40D235-6AA7-4764-89AB-108562631979" // Server TX, Client RX
 #define CHARACTERISTIC_UUID_RX "12345678-1234-5678-1234-56789abcdef0" // Server RX, Client TX
+#define MAX_BUFFER_SIZE 1024
 
 static BLEAddress *pServerAddress;
 static boolean doConnect = false;
@@ -26,13 +27,43 @@ static BLEUUID serviceUUID(SERVICE_UUID);
 // The characteristic of the remote service we are interested in.
 static BLEUUID    charUUID(CHARACTERISTIC_UUID_RX);
 
+String uartBuffer = "";
+bool isUartReady = true; // Initially assume UART is ready
+
+// Global buffer and delimiter
+String dataBuffer = "";
+const char delimiter = '\n'; // Delimiter to indicate end of a message
+
+// timing for transmissions
+unsigned long lastSendTime = 0;
+const unsigned long sendInterval = 5; // Interval in milliseconds
+
 void notifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {
-  Serial.print("Notification: ");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)pData[i]);
-  }
-  Serial.println();
+    Serial.print("Received over BLE: ");
+    for (int i = 0; i < length; i++) {
+        Serial.print(pData[i], HEX); // Print each byte in HEX format
+        Serial.print(" "); // Space for readability
+        FPGA.write(pData[i]); // Send each byte to FPGA via UART
+    }
+    Serial.println(); // Newline for readability
+
+    // Echo back what is being sent to the FPGA for verification
+    Serial.print("Sent to FPGA: ");
+    for (int i = 0; i < length; i++) {
+        Serial.print(pData[i], HEX); // Echo in HEX format
+        Serial.print(" "); // Space for readability
+    }
+    Serial.println(); // Newline for readability
 }
+
+void sendDataFromBuffer() {
+    if (isUartReady && uartBuffer.length() > 0) {
+        FPGA.print(uartBuffer);
+        uartBuffer = ""; // Clear the buffer after sending
+        Serial.println("Data sent to FPGA via UART.");
+    }
+}
+
 bool connectToServer(BLEAddress pAddress) {
     Serial.print("Forming a connection to ");
     Serial.println(pAddress.toString().c_str());
@@ -78,7 +109,6 @@ bool connectToServer(BLEAddress pAddress) {
     return true;
     }
 
-
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
     Serial.print("BLE Device found: ");
@@ -108,7 +138,6 @@ class MyClientCallback: public BLECharacteristicCallbacks {
     }
 };
 
-
 void setup() {
   Serial.begin(115200);
   FPGA.begin(115200, SERIAL_8N1, UART_RX_PIN, UART_TX_PIN); // Initialize UART for FPGA communication
@@ -134,6 +163,13 @@ void loop() {
     }
   }
 
+  // Check if it's time to send data from the buffer
+  unsigned long currentTime = millis();
+  if (currentTime - lastSendTime >= sendInterval) {
+    sendDataFromBuffer();
+    lastSendTime = currentTime; // Update last send time
+  }
+
   // Handling data transmission to and from the FPGA
   if (connected) {
     if (FPGA.available()) {
@@ -148,5 +184,5 @@ void loop() {
     doScan = false;
   }
 
-  delay(1000);
+  delay(10); // Adjust the delay as needed for other loop operations
 }
