@@ -5,6 +5,11 @@
 #include <BLEUtils.h>
 #include <BLEServer.h>
 #include <vector>
+#include <ArduinoEigenDense.h>
+
+using namespace Eigen;
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x29); // BNO055 uses address 0x28 by default, adjust if necessary
 
@@ -16,7 +21,17 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x29); // BNO055 uses address 0x28 by 
 #define SDA_PIN 23
 #define SCL_PIN 22
 
-struct Quaternion {
+const int STATE_SIZE = 6;          // Position (x, y, z) and velocity (vx, vy, vz) in 3D space
+const int CONTROL_SIZE = 0;        // No control input
+const int MEASUREMENT_SIZE = 3;    // Position measurements (x, y, z) in 3D space
+
+Eigen::MatrixXd A(STATE_SIZE, STATE_SIZE);
+Eigen::MatrixXd B(STATE_SIZE, CONTROL_SIZE);
+Eigen::MatrixXd Q(STATE_SIZE, STATE_SIZE);
+Eigen::MatrixXd R(MEASUREMENT_SIZE, MEASUREMENT_SIZE);
+Eigen::MatrixXd H(MEASUREMENT_SIZE, STATE_SIZE);
+
+struct myQuaternion {
     float w, x, y, z;
 };
 
@@ -32,32 +47,31 @@ typedef struct {
     float gravZ;
 } GravityVector;
 
-struct Vector3 {
+struct myVector3 {
     float x, y, z;
 };
 
 // Global variables for position and velocity
-Vector3 position = {0, 0, 0};
-Vector3 velocity = {0, 0, 0};
+myVector3 position = {0, 0, 0};
+myVector3 velocity = {0, 0, 0};
 
 std::vector<LinearAcceleration> accelerationSamples;
 
-
 unsigned long lastSampleTime = 0; // Tracks the last time sensor data was sampled
-unsigned long lastPositionUpdateTime = 0; // Tracks the last time the position was updated
+unsigned long lastPositionUpdateTime = 0; // Tracks last time the position was updated
 
 const unsigned long sampleInterval = 10; // Sample data every 10ms
-const unsigned long positionUpdateInterval = 100; // Calculate position every 40ms
+const unsigned long positionUpdateInterval = 50; // Calculate position every 50ms
 
-const float stationaryThresholdX = 0.1;
-const float stationaryThresholdY = 0.1;
-const float stationaryThresholdZ = 0.1;
+const float stationaryThresholdX = 0.2;
+const float stationaryThresholdY = 0.2;
+const float stationaryThresholdZ = 0.2;
 
 // Global variable for tracking time since last position update calculation
 static unsigned long lastPositionCalculationTime = 0;
 
-// Initialize quaternion, linear acceleration, and gravity vector structs globally
-Quaternion quatStruct = {0.0, 0.0, 0.0, 0.0};
+// Initialize myQuaternion, linear acceleration, and gravity vector structs globally
+myQuaternion quatStruct = {0.0, 0.0, 0.0, 0.0};
 LinearAcceleration linAccStruct = {0.0, 0.0, 0.0};
 GravityVector gravVecStruct = {0.0, 0.0, 0.0};
 
@@ -71,7 +85,7 @@ LinearAcceleration prevFilteredAcc = {0.0, 0.0, 0.0};
 float accXBias = 0.0, accYBias = 0.0, accZBias = 0.0;
 
 // all debug
-bool DEBUG = false;
+bool DEBUG = true;
 
 // less info
 bool DEBUG_LITE = true;
@@ -79,8 +93,13 @@ bool DEBUG_LITE = true;
 bool isFirstMeasurement = true;
 bool isFirstPositionUpdate = true;
 
+unsigned long stationaryStartTime = 0; // Tracks when the sensor first became stationary
+bool stationaryRESET = false;
+
 BLECharacteristic *pCharacteristicTX; // For sending data
 BLECharacteristic *pCharacteristicRX; // For receiving data
+
+void initializeKalmanMatrices();
 
 // Callback for receiving data
 class MyCallbacks: public BLECharacteristicCallbacks {
@@ -94,6 +113,114 @@ class MyCallbacks: public BLECharacteristicCallbacks {
       }
     }
 };
+
+class KalmanFilter {
+public:
+    VectorXd x; // State vector
+    MatrixXd A; // State transition matrix
+    MatrixXd B; // Control input matrix
+    MatrixXd P; // Estimate error covariance
+    MatrixXd Q; // Process noise covariance
+    MatrixXd R; // Measurement noise covariance
+    MatrixXd H; // Measurement matrix
+
+    KalmanFilter(int stateSize, int controlSize, int measurementSize) {
+        // Initialize state vector
+        x = VectorXd::Zero(stateSize);
+
+        double deltaT = calculateDeltaTimeD();
+
+        // Initialize matrices with appropriate sizes
+        A = MatrixXd::Identity(stateSize, stateSize);
+        B = MatrixXd::Zero(stateSize, controlSize);
+        P = MatrixXd::Identity(stateSize, stateSize) * 1000; // Start with high uncertainty
+        Q = MatrixXd::Identity(stateSize, stateSize);
+        R = MatrixXd::Identity(measurementSize, measurementSize);
+        H = MatrixXd::Zero(measurementSize, stateSize);
+
+
+        A(0, 1) = deltaT; // Position update includes velocity component
+        A(2, 3) = deltaT;
+        A(4, 5) = deltaT;
+  
+        // Modify A matrix to incorporate constant acceleration and jerk model
+        for (int i = 0; i < stateSize / 3 - 1; ++i) {
+            int row = i * 3;
+
+            // Update position with velocity, acceleration, and jerk components
+            A(row, row + 1) = deltaT;                    // Update position with velocity
+            A(row, row + 2) = 0.5 * deltaT * deltaT;     // Update position with acceleration
+            A(row, row + 3) = (1.0 / 6.0) * deltaT * deltaT * deltaT; // Update position with jerk
+
+            // Update velocity with acceleration and jerk components
+            A(row + 1, row + 2) = deltaT;                // Update velocity with acceleration
+            A(row + 1, row + 3) = 0.5 * deltaT * deltaT; // Update velocity with jerk
+
+            // Update acceleration with jerk component
+            A(row + 2, row + 3) = deltaT;                // Update acceleration with jerk
+        }
+
+        // Adjust Q, R based on system's characteristics
+        // Q: Process noise. Increase for more uncertainty in model
+        // R: Measurement noise. Increase for more uncertainty in measurements
+    }
+
+    void setTransitionMatrix(const MatrixXd& newA) {
+        A = newA;
+    }
+
+    void setControlInputModel(const MatrixXd& newB) {
+        B = newB;
+    }
+
+    void setProcessNoiseCovariance(const MatrixXd& newQ) {
+        Q = newQ;
+    }
+
+    void setMeasurementNoiseCovariance(const MatrixXd& newR) {
+        R = newR;
+    }
+
+    void setMeasurementModel(const MatrixXd& newH) {
+        H = newH;
+    }
+
+    void predict() {
+        x = A * x; // Predict the state
+        P = A * P * A.transpose() + Q; // Predict estimate covariance
+    }
+
+    void update(const VectorXd &z) {
+        MatrixXd S = H * P * H.transpose() + R; // Residual covariance
+        MatrixXd K = P * H.transpose() * S.inverse(); // Kalman gain
+        
+        VectorXd y = z - H * x; // Measurement pre-fit residual
+        x = x + K * y; // Update the state
+        
+        int size = x.size();
+        MatrixXd I = MatrixXd::Identity(size, size);
+        P = (I - K * H) * P; // Update estimate covariance
+    }
+private:
+    // Function to calculate deltaT in seconds as a double
+    double calculateDeltaTimeD() {
+          static bool isFirstCalculation = true;
+          static unsigned long lastCalculationTime = 0;
+
+          if (isFirstCalculation) {
+              isFirstCalculation = false;
+              lastCalculationTime = millis();
+              return static_cast<double>(positionUpdateInterval) / 1000.0; // Return initial update interval
+          } else {
+              unsigned long currentTime = millis();
+              double deltaT = (currentTime - lastCalculationTime) / 1000.0; // Convert milliseconds to seconds
+              lastCalculationTime = currentTime; // Update the last position calculation time
+              return deltaT;
+          }
+      }
+};
+
+KalmanFilter kf(STATE_SIZE, CONTROL_SIZE, MEASUREMENT_SIZE);
 
 void checkCalibration() {
   Serial.println("Checking sensor calibration...");
@@ -128,14 +255,14 @@ void measureAndStoreBias() {
 
     if (i == 0 || (i % 10) == 0) {
       // Print the first sample of linear acceleration as a reference
-      Serial.println();
+      //Serial.println();
       Serial.print("Sample of Linear Accel: X=");
       Serial.print(linAccel.x(), 4);
       Serial.print(", Y=");
       Serial.print(linAccel.y(), 4);
       Serial.print(", Z=");
       Serial.println(linAccel.z(), 4);
-      Serial.println();
+     // Serial.println();
     }
 
     delay(20); // Short delay between samples
@@ -146,14 +273,14 @@ void measureAndStoreBias() {
   accZBias = sumZ / samples;
 
   // Print calculated biases
-  Serial.println();
+ // Serial.println();
   Serial.print("Calculated Biases - X: ");
   Serial.print(accXBias, 4);
   Serial.print(", Y: ");
   Serial.print(accYBias, 4);
   Serial.print(", Z: ");
   Serial.println(accZBias, 4);
-  Serial.println();
+ // Serial.println();
 }
 
 // Function to check sensor calibration
@@ -176,6 +303,15 @@ void resetPositionAndVelocity() {
 void setup() {
   Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
+
+  initializeKalmanMatrices(); // Call the initialization function
+
+  // Initialize Kalman filter with the matrices
+  //kf.setTransitionMatrix(A);
+  kf.setControlInputModel(B);
+  kf.setProcessNoiseCovariance(Q);
+  kf.setMeasurementNoiseCovariance(R);
+  kf.setMeasurementModel(H);
 
   if (bno.begin()) {
       Serial.println("BNO055 detected successfully.");
@@ -307,9 +443,9 @@ void sendQuaternionPart(char part, float val1, float val2) {
   pCharacteristicTX->notify();
 }
 
-void updatePositionAndSend(Quaternion quat, LinearAcceleration linAcc, GravityVector gravity, float deltaT) {
+void updatePositionAndSend(myQuaternion quat, LinearAcceleration linAcc, GravityVector gravity, float deltaT) {
 
-  Serial.println(); // Add a blank line for readability
+  //Serial.println(); // Add a blank line for readability
 
   // Debugging: Print raw quaternion data before conversion
   if(DEBUG) {
@@ -347,7 +483,7 @@ void updatePositionAndSend(Quaternion quat, LinearAcceleration linAcc, GravityVe
     prevFilteredAcc = adjustedLinAcc;
     isFirstMeasurement = false;
   }
-  LinearAcceleration filteredAccel = applyLowPassFilter(adjustedLinAcc, prevFilteredAcc, 0.5);
+  LinearAcceleration filteredAccel = applyLowPassFilter(adjustedLinAcc, prevFilteredAcc, 0.01);
 
   prevFilteredAcc = filteredAccel;
 
@@ -362,45 +498,87 @@ void updatePositionAndSend(Quaternion quat, LinearAcceleration linAcc, GravityVe
     Serial.println(filteredAccel.linAccZ, 4);
   }
 
-  // checks to find stationary axes
-  bool isStationaryX = fabs(filteredAccel.linAccX) < stationaryThresholdX;
-  bool isStationaryY = fabs(filteredAccel.linAccY) < stationaryThresholdY;
-  bool isStationaryZ = fabs(filteredAccel.linAccZ) < stationaryThresholdZ;
+  // Determine if the sensor is currently stationary
+  bool currentlyStationary = fabs(filteredAccel.linAccX) < stationaryThresholdX &&
+                             fabs(filteredAccel.linAccY) < stationaryThresholdY &&
+                             fabs(filteredAccel.linAccZ) < stationaryThresholdZ;
 
-  float deltaX, deltaY, deltaZ;
 
-  // Update velocities conditionally
-  if (!isStationaryX) {
-      velocity.x += filteredAccel.linAccX * deltaT;
-  } else {
-      velocity.x = 0;
-  }
-
-  if (!isStationaryY) {
-      velocity.y += filteredAccel.linAccY * deltaT;
-  } else {
-      velocity.y = 0;
+  // Check if the sensor has just become stationary
+  if (currentlyStationary && !stationaryRESET) {
+      stationaryRESET = true;
+      stationaryStartTime = millis(); // Record the time it became stationary
+  } else if (!currentlyStationary) {
+      stationaryRESET = false;
   }
 
-  if (!isStationaryZ) {
-      velocity.z += filteredAccel.linAccZ * deltaT;
-  } else {
-      velocity.z = 0;
+  // Check if the sensor has been stationary for more than 10 seconds
+  if (stationaryRESET && (millis() - stationaryStartTime) > 10000) {
+      // Reset position and velocity
+      position = {0, 0, 0};
+      velocity = {0, 0, 0};
+
+      // Reset the stationary start time to avoid repeated resets
+      stationaryStartTime = millis();
+
+      if (DEBUG) {
+          Serial.println("Sensor has been stationary for more than 10 seconds. Resetting position.");
+      }
   }
 
-  // Update positions conditionally
-  if (!isStationaryX) {
-      deltaX = velocity.x * deltaT + 0.5 * filteredAccel.linAccX * pow(deltaT, 2);
-      position.x += velocity.x * deltaT + 0.5 * filteredAccel.linAccX * pow(deltaT, 2);
+  // Estimate change in position and velocity from filtered acceleration
+
+  float velX = filteredAccel.linAccX * deltaT;
+  float velY = filteredAccel.linAccY * deltaT;
+  float velZ = filteredAccel.linAccZ * deltaT;
+  float deltaX = 0.5 * filteredAccel.linAccX * deltaT * deltaT;
+  float deltaY = 0.5 * filteredAccel.linAccY * deltaT * deltaT;
+  float deltaZ = 0.5 * filteredAccel.linAccZ * deltaT * deltaT;
+
+  // Apply stationary checks to modify the estimated changes if needed
+  if (fabs(filteredAccel.linAccX) < stationaryThresholdX) {
+      deltaX = 0;
+      velX = 0;
+
   }
-  if (!isStationaryY) {
-      deltaY = velocity.y * deltaT + 0.5 * filteredAccel.linAccY * pow(deltaT, 2);
-      position.y += velocity.y * deltaT + 0.5 * filteredAccel.linAccY * pow(deltaT, 2);
+  if (fabs(filteredAccel.linAccY) < stationaryThresholdY) {
+      deltaY = 0;
+      velY = 0;
   }
-  if (!isStationaryZ) {
-      deltaZ = velocity.z * deltaT + 0.5 * filteredAccel.linAccZ * pow(deltaT, 2);  
-      position.z += velocity.z * deltaT + 0.5 * filteredAccel.linAccZ * pow(deltaT, 2);
+
+  if (fabs(filteredAccel.linAccZ) < stationaryThresholdZ) {
+      deltaZ = 0;
+      velZ = 0;
   }
+  
+/*
+  // Create a measurement vector from the estimated changes
+  VectorXd z(MEASUREMENT_SIZE);
+  z << deltaX, deltaY, deltaZ;
+  
+  // Kalman Filter Update Step
+  kf.update(z);
+  
+  // Extract and apply the updated state from the Kalman filter
+  velocity.x = kf.x(3);
+  velocity.y = kf.x(4);
+  velocity.z = kf.x(5);
+
+  position.x += kf.x(0);
+  position.y += kf.x(1);
+  position.z += kf.x(2);
+
+*/
+  
+  // Extract and apply the updated state from the Kalman filter
+  velocity.x = velX;
+  velocity.y = velY;
+  velocity.z = velZ;
+
+  position.x += deltaX;
+  position.y += deltaY;
+  position.z += deltaZ;
+
 
   if(DEBUG) {
     // Debugging: Print deltaT
@@ -421,6 +599,7 @@ void updatePositionAndSend(Quaternion quat, LinearAcceleration linAcc, GravityVe
   float positionY_cm = position.y * 100;
   float positionZ_cm = position.z * 100;
 
+/*
   if(DEBUG && !isStationaryX && !isStationaryY && !isStationaryZ) {
     // Debugging: Print intermediate math for position calculation
     Serial.print("Delta Position X: ");
@@ -430,7 +609,7 @@ void updatePositionAndSend(Quaternion quat, LinearAcceleration linAcc, GravityVe
     Serial.print("Delta Position Z: ");
     Serial.println(deltaZ, 4);
   }
-
+  */
 
  // Serial.println(); // Add a blank line for readability
   // Print the updated position data to the Serial Monitor
@@ -452,8 +631,8 @@ void sendPosition(float x, float y, float z) {
     // Similar to sendPacket function but for position data
 }
 
-// Function to calculate deltaT in seconds
-float calculateDeltaTime() {
+// Function to calculate deltaT in seconds as a float
+float calculateDeltaTimeF() {
     if (isFirstPositionUpdate) {
         isFirstPositionUpdate = false;
         lastPositionCalculationTime = millis();
@@ -468,7 +647,7 @@ float calculateDeltaTime() {
 
 // Function to convert quaternion orientation data into a 3x3 rotation matrix.
 // This matrix can then be used to rotate vectors from the local sensor frame to the global frame.
-void quaternionToRotationMatrix(Quaternion q, float R[3][3]) {
+void quaternionToRotationMatrix(myQuaternion q, float R[3][3]) {
     float qw = q.w, qx = q.x, qy = q.y, qz = q.z; // Extract quaternion components for easier usage.
 
     // The following computations are based on quaternion-to-rotation matrix equations.
@@ -506,8 +685,8 @@ LinearAcceleration rotateLVector(LinearAcceleration v, float R[3][3]) {
     return rotated; // Return the rotated vector.
 }
 
-Quaternion calculateAverageQ(const std::vector<Quaternion>& samples) {
-    Quaternion avg = {0, 0, 0, 0};
+myQuaternion calculateAverageQ(const std::vector<myQuaternion>& samples) {
+    myQuaternion avg = {0, 0, 0, 0};
     for (const auto& q : samples) {
         avg.w += q.w;
         avg.x += q.x;
@@ -576,33 +755,38 @@ void loop() {
   if (!initialPositionSet) {
     resetPositionAndVelocity(); // Reset position and velocity
     initialPositionSet = true; // Ensure we only do this once
-    Serial.println(); // Add a blank line for readability
+   // Serial.println(); // Add a blank line for readability
     Serial.println("Initial position and velocity reset.");
   }
+
+  VectorXd u = VectorXd::Zero(CONTROL_SIZE); // No control input in this case
+  kf.predict();
 
   // Sample sensor data at a higher frequency (every 20ms)
   if (currentTime - lastSampleTime >= sampleInterval) {
       lastSampleTime = currentTime;
       
-      // Read quaternion data from the BNO055
+      sensors_event_t event;
+
+      // Read myQuaternion data from the BNO055
       imu::Quaternion quat = bno.getQuat();
       quatStruct = {quat.w(), quat.x(), quat.y(), quat.z()};
       
       // Read linAccel data
-      imu::Vector<3> linAccelSample = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
-      LinearAcceleration linAccelRaw = {linAccelSample.x(), linAccelSample.y(), linAccelSample.z()};
+      bno.getEvent(&event, Adafruit_BNO055::VECTOR_LINEARACCEL);
+      LinearAcceleration linAccelRaw = {event.acceleration.x, event.acceleration.y, event.acceleration.z};
 
       // Adjust raw linear acceleration data by removing the bias
-      linAccStruct.linAccX = linAccelSample.x() - accXBias;
-      linAccStruct.linAccY = linAccelSample.y() - accYBias;
-      linAccStruct.linAccZ = linAccelSample.z() - accZBias;
+      linAccStruct.linAccX = event.acceleration.x - accXBias;
+      linAccStruct.linAccY = event.acceleration.y - accYBias;
+      linAccStruct.linAccZ = event.acceleration.z - accZBias;
 
       // Read grav data
-      imu::Vector<3> gravityVec = bno.getVector(Adafruit_BNO055::VECTOR_GRAVITY);
-      gravVecStruct = {gravityVec.x(), gravityVec.y(), gravityVec.z()};
+      bno.getEvent(&event, Adafruit_BNO055::VECTOR_GRAVITY);
+      gravVecStruct = {event.acceleration.x, event.acceleration.y, event.acceleration.z};
 
       // Add sample to average accumulator
-      accelerationSamples.push_back({linAccelSample.x() - accXBias, linAccelSample.y() - accYBias, linAccelSample.z() - accZBias});
+      accelerationSamples.push_back({event.acceleration.x - accXBias, event.acceleration.y - accYBias, event.acceleration.z - accZBias});
       
       
       if(DEBUG) {
@@ -657,24 +841,50 @@ void loop() {
   // Calculate and send position at a lower frequency (every 40ms)
   if (currentTime - lastPositionUpdateTime >= positionUpdateInterval) {
       lastPositionUpdateTime = currentTime;
-      float deltaT = calculateDeltaTime();
+      float deltaT = calculateDeltaTimeF();
 
-      LinearAcceleration avgLinAcc = calculateAverageL(accelerationSamples);
+     // LinearAcceleration avgLinAcc = calculateAverageL(accelerationSamples);
 
       if(DEBUG_LITE) {
         // Print raw linear acceleration data
-        Serial.print("AVG Linear Accel: X=");
-        Serial.print(avgLinAcc.linAccX, 4);
+        Serial.print("Instantaneous Linear Accel: X=");
+        Serial.print(linAccStruct.linAccX, 4);
         Serial.print(", Y=");
-        Serial.print(avgLinAcc.linAccY, 4);
+        Serial.print(linAccStruct.linAccY, 4);
         Serial.print(", Z=");
-        Serial.println(avgLinAcc.linAccZ, 4);
+        Serial.println(linAccStruct.linAccZ, 4);
       }
       
       // Clear the vectors after averaging
       accelerationSamples.clear();
       
-      updatePositionAndSend(quatStruct, avgLinAcc, gravVecStruct, deltaT);
+      updatePositionAndSend(quatStruct, linAccStruct, gravVecStruct, deltaT);
   }
 
 }
+void initializeKalmanMatrices() {
+  // Now inside a function, we can use the Eigen comma-initializer syntax
+  A << 1, 0, 0, 1, 0, 0,
+       0, 1, 0, 0, 1, 0,
+       0, 0, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 1, 0,
+       0, 0, 0, 0, 0, 1;
+       
+       
+Q << 50, 0,   0,   0,   0,   0,   
+     0,   50, 0,   0,   0,   0,   
+     0,   0,   50,   0,   0,   0,   
+     0,   0,   0,   50,   0,   0,  
+     0,   0,   0,   0,   50,  0,   
+     0,   0,   0,   0,   0,   100;  
+       
+  R << 0.1, 0, 0,
+       0, 0.1, 0,
+       0, 0, 0.1;
+       
+  H << 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0;
+}
+

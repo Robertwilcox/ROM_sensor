@@ -3,6 +3,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <ctype.h>
+#include <stddef.h>
+#include <math.h>
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -14,57 +16,176 @@
 #include "platform.h"
 #include "microblaze_sleep.h"
 #include "xil_printf.h"
+#include "esp32_BLE_uart.h"
+//#include "deserializeData.h"
+#include "packetReader.h"
+#include "positionCalculator.h"
 
 // Alias for UART Lite Peripheral
 #define UART0_BASEADDR XPAR_AXI_UARTLITE_0_BASEADDR
 #define UART1_BASEADDR XPAR_AXI_UARTLITE_1_BASEADDR
 
+#define MAX_PACKET_SIZE 20
+#define START_MARKER 0x02
+#define END_MARKER 0x03
 
-void vMonitorUART1Task(void *pvParameters) {
-    (void)pvParameters; // Unuseds parameter
-    char ch, c;
-    char test1 = 'a';
-    char test2 = 'b';
-    char newline = '\n';
-    xil_printf("Monitoring\r\n");
-    for (;;) {
+Position myPosition;
+Quaternion myQuaternion;
+LinearAcceleration myLinearAccel;
+GravityVector myGravityVector;
+void reverseString(char* str, int length);
+int intToStr(int x, char str[], int d);
+void floatToString(float n, char *res, int afterpoint);
 
-    	XUartLite_SendByte(UART1_BASEADDR, test1);
-    	//xil_printf("Sending UART1: %c\r\n", test1);
 
-    	XUartLite_SendByte(UART1_BASEADDR, newline);
-    	//xil_printf("Sending UART1: %c\r\n", newline);
+void vUARTCommunicationTask(void *pvParameters) {
+    xil_printf("UART Communication Task Started\r\n");
 
-    	XUartLite_SendByte(UART0_BASEADDR, test2);
-    	//xil_printf("Sending UART0: %c\r\n", test1);
+    // Buffer to hold the string representation of floats
+    char floatStr[20]; // Adjust the size based on your needs
 
-    	XUartLite_SendByte(UART0_BASEADDR, newline);
-    	//xil_printf("Sending UART0: %c\r\n", newline);
+    while (1) {
+        uint8_t length;
+        if (readPacket()) { // Check if a packet was read successfully
+            const uint8_t* packet = getLastValidPacket(&length);
 
-    	if (XUartLite_IsReceiveEmpty(UART1_BASEADDR) == FALSE) {
-    	   ch = XUartLite_RecvByte(UART1_BASEADDR);
-    	   xil_printf("UART1 Received: %c\r\n", ch);
-    	}
-    	if (XUartLite_IsReceiveEmpty(UART0_BASEADDR) == FALSE) {
-    	   c = XUartLite_RecvByte(UART0_BASEADDR);
-    	   xil_printf("UART0 Received: %c\r\n", c);
-    	}
-        vTaskDelay(pdMS_TO_TICKS(1000));
+           /* xil_printf("Valid packet received (%d bytes): \r\n", length);
+            for (int i = 0; i < length; i++) {
+                xil_printf("%02X ", packet[i]);
+            }
+            */
+            xil_printf("\r\n");
+
+            // Process the packet to update the structs
+            processPacket(&myQuaternion, &myLinearAccel, &myGravityVector);
+
+            // After processing packet to update the sensor data structs
+			get3Dposition(&myPosition, &myQuaternion, &myLinearAccel, &myGravityVector); // Update the position data based on the latest sensor readings
+
+			// Convert position values to strings and print
+			floatToString(myPosition.xPos, floatStr, 2);
+			xil_printf("Position X: %s\r\n", floatStr);
+
+			floatToString(myPosition.yPos, floatStr, 2);
+			xil_printf("Position Y: %s\r\n", floatStr);
+
+			floatToString(myPosition.zPos, floatStr, 2);
+			xil_printf("Position Z: %s\r\n", floatStr);
+
+			/*
+            // Convert quaternion values to strings and print
+            floatToString((float)myQuaternion.w, floatStr, 2);
+            xil_printf("Quaternion w: %s\r\n", floatStr);
+
+            floatToString((float)myQuaternion.x, floatStr, 2);
+            xil_printf("Quaternion x: %s\r\n", floatStr);
+
+            floatToString((float)myQuaternion.y, floatStr, 2);
+            xil_printf("Quaternion y: %s\r\n", floatStr);
+
+            floatToString((float)myQuaternion.z, floatStr, 2);
+            xil_printf("Quaternion z: %s\r\n", floatStr);
+
+            // Convert linear acceleration values to strings and print
+            floatToString((float)myLinearAccel.linAccX, floatStr, 2);
+            xil_printf("Linear Acceleration X: %s\r\n", floatStr);
+
+            floatToString((float)myLinearAccel.linAccY, floatStr, 2);
+            xil_printf("Linear Acceleration Y: %s\r\n", floatStr);
+
+            floatToString((float)myLinearAccel.linAccZ, floatStr, 2);
+            xil_printf("Linear Acceleration Z: %s\r\n", floatStr);
+
+            // Convert gravity vector values to strings and print
+            floatToString((float)myGravityVector.gravX, floatStr, 2);
+            xil_printf("Gravity Vector X: %s\r\n", floatStr);
+
+            floatToString((float)myGravityVector.gravY, floatStr, 2);
+            xil_printf("Gravity Vector Y: %s\r\n", floatStr);
+
+            floatToString((float)myGravityVector.gravZ, floatStr, 2);
+            xil_printf("Gravity Vector Z: %s\r\n", floatStr);
+            */
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(100)); // Wait a bit before trying again
     }
 }
 
 
+
+void reverseString(char* str, int length) {
+    int start = 0;
+    int end = length - 1;
+    while (start < end) {
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+int intToStr(int x, char str[], int d) {
+    int i = 0;
+    bool isNegative = false;
+
+    if (x < 0) {
+        isNegative = true;
+        x = -x;
+    }
+
+    // Extract characters for the string
+    do {
+        str[i++] = (x % 10) + '0';
+        x = x / 10;
+    } while (x);
+
+    // If number of digits required is more, then add 0s at the beginning
+    while (i < d)
+        str[i++] = '0';
+
+    if (isNegative)
+        str[i++] = '-';
+
+    reverseString(str, i);
+    str[i] = '\0';
+    return i;
+}
+
+// Converts a floating point number to string.
+void floatToString(float n, char *res, int afterpoint) {
+    // Extract integer part
+    int ipart = (int)n;
+
+    // Extract floating part
+    float fpart = n - (float)ipart;
+
+    // Convert integer part to string
+    int i = intToStr(ipart, res, 0);
+
+    // Check for display option after point
+    if (afterpoint != 0) {
+        res[i] = '.';  // add dot
+
+        // Get the value of fraction part up to given no. of points after dot.
+        fpart = fpart * pow(10, afterpoint);
+
+        intToStr((int)fpart, res + i + 1, afterpoint);
+    }
+}
+
 int main(void) {
-    // Initialize platform
-    init_platform();
-    xil_printf("Program started. Awaiting UART0 input...\r\n");
+    init_platform();  // Initialize platform
+    xil_printf("Program started. Communicating with ESP32...\r\n");
 
-    xTaskCreate(vMonitorUART1Task, "Monitor UART1 Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
+    // Create a FreeRTOS task for UART communication
+    xTaskCreate(vUARTCommunicationTask, "UART Communication Task", configMINIMAL_STACK_SIZE * 2, NULL, tskIDLE_PRIORITY + 1, NULL);
 
-    // Start the scheduler
-    vTaskStartScheduler();
+    vTaskStartScheduler();  // Start the scheduler
 
-    // Should never reach here
+    // Cleanup and exit (should never reach here in normal operation)
     cleanup_platform();
     return 0;
 }
+
