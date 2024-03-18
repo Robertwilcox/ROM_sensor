@@ -14,6 +14,7 @@
 #include "platform.h"
 #include "microblaze_sleep.h"
 #include "xil_printf.h"
+#include "semphr.h"
 
 // Alias for Interrupt Controller Peripheral
 #define INTC_DEVICE_ID          XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
@@ -45,6 +46,7 @@ typedef struct {
 	uint8_t prev_lift_type;
 	uint8_t prev_warmup_mode;
 	bool    warmup_done;
+    bool    workset_done;
 } UserInput, *UserInputPtr;
 
 TaskHandle_t xMenu    = NULL;
@@ -52,10 +54,13 @@ TaskHandle_t xData    = NULL;
 TaskHandle_t xWarmUp  = NULL;
 TaskHandle_t xWorkSet = NULL;
 
+xSemaphoreHandle data_lck = 0;
+
 XIntc        irq;
 
 UserInputPtr user_input;
 WarmUpSetPtr warmup_set;
+WorkSetPtr   work_set;
 
 int main(void) {
     // Initialize platform
@@ -67,6 +72,8 @@ int main(void) {
     }
 
     print("BarBuddy Initializing...\r\n");
+
+    data_lck = xSemaphoreCreateMutex();
 
     xTaskCreate(vMenuTask, "MENU TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xMenu);
     xTaskCreate(vDataTask, "DATA TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xData);
@@ -172,6 +179,15 @@ void vDataTask(void *pvParameters) {
 	print("DEBUG:Entered vDataTask()\r\n");
 
 	for (;;){
+		if (xSemaphoreTake(data_lck, 1000)) {
+            print("DEBUG:Mutex Taken\r\n");
+
+        }
+
+        else {
+	        print("DEBUG:Mutex In Use\r\n"); 
+        }
+
 
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
@@ -181,8 +197,16 @@ void vWarmUpTask(void *pvParameters) {
 	print("DEBUG:Entered vWarmUpTask()\r\n");
 
 	for (;;){
-		WarmUpSet_LogRep(warmup_set);
-		user_input->warmup_done = true;
+        if (xSemaphoreTake(data_lck, 1000)) {
+            print("DEBUG:Mutex Taken\r\n");
+            WarmUpSet_LogRep(warmup_set);
+		    user_input->warmup_done = true;
+            xSemaphoreGive(data_lck); 
+        }
+        else {
+	        print("DEBUG:Mutex In Use\r\n"); 
+        }
+		
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
@@ -191,7 +215,15 @@ void vWorkSetTask(void *pvParameters) {
 	print("DEBUG:Entered vWorkSetTask()\r\n");
 
 	for (;;){
-
+        if (xSemaphoreTake(data_lck, 1000)) {
+	        print("DEBUG:Mutex Taken\r\n");
+            WarmUpSet_LogRep(work_set);
+            xSemaphoreGive(data_lck);
+        }
+        else {
+	        print("DEBUG:Mutex In Use\r\n"); 
+        }
+		
 
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}

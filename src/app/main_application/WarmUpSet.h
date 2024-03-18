@@ -10,7 +10,7 @@ typedef struct {
 	float     rep_time;
 } WarmUpSet, *WarmUpSetPtr;
 
-int WarmUpSet_init(WarmUpSet* inst_ptr);
+void WarmUpSet_init(WarmUpSet* inst_ptr);
 
 int WarmUpSet_isMove(WarmUpSet* inst_ptr);
 
