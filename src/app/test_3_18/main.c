@@ -227,6 +227,8 @@ static TickType_t repStartTime = 0;
 static int repCount = 0;
 static int directionChangeCount = 0; // Counts consecutive velocity readings in the new direction
 static const int directionChangeThreshold = 3; // Threshold for confirming a direction change
+static TickType_t totalRepDuration = 0; // Accumulates total duration of all reps
+static TickType_t avgRepDuration = 0; // Avg duration of all reps
 
 void LogRepCount(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr) {
     print("DEBUG: Entered LogRep()\r\n");
@@ -252,15 +254,22 @@ void LogRepCount(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr) {
 
     // Confirm the change in direction if we have seen enough consecutive readings
     if (directionChangeCount >= directionChangeThreshold) {
+
         // Confirmed direction change; handle as a rep
         if (repStartTime != 0) { // Ensure this isn't the first data point
+
             TickType_t currentTick = xTaskGetTickCount();
             TickType_t repDuration = currentTick - repStartTime;
 
-            // Log the rep duration here
+            // Accumulate total rep duration
+            totalRepDuration += repDuration;
             repCount++;
-            char debugMessage[50];
-            xil_printf(debugMessage, sizeof(debugMessage), "Rep %d detected. Duration: %lu ticks.\r\n", repCount, repDuration);
+
+            // Calculate the average rep duration
+            avgRepDuration = totalRepDuration / repCount;
+
+            char debugMessage[100];
+            xil_printf(debugMessage, sizeof(debugMessage), "Rep %d detected. Duration: %lu ticks. Average Duration: %lu ticks.\r\n", repCount, repDuration, averageRepDuration);
             print(debugMessage);
 
             // Reset rep start time for the next rep
