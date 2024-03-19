@@ -12,7 +12,7 @@
 Position myPosition;
 Velocity myVelocity;
 
-void getPositionAndValocity(DataPoint *dataPoint) {
+void getPositionAndVelocity(DataPoint *dataPoint) {
 
     processPacket(&myVelocity, &myPosition);
 

@@ -11,5 +11,5 @@ typedef struct {
 	float z_veloc;
 } DataPoint, *DataPointPtr;
 
-void getPositionAndValocity(DataPoint *dataPoint);
+void getPositionAndVelocity(DataPoint *dataPoint);
 #endif // UPDATE_P_AND_V_h
