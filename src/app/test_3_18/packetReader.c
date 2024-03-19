@@ -74,7 +74,7 @@ bool readPacket() {
                 memcpy(lastValidPacket, packetBuffer, packetIndex);
                 lastValidPacketLength = packetIndex;
 
-                xil_printf("Valid packet received\r\n");
+                //xil_printf("Valid packet received\r\n");
                 return true;
             } else {
                 // Checksum mismatch
@@ -123,7 +123,7 @@ void processPacket(Velocity * velocity, Position* position) {
             break;
         }
         default: {
-            xil_printf("Unknown packet type: %c\n", packetType);
+           // xil_printf("Unknown packet type: %c\n", packetType);
             break;
         }
     }
