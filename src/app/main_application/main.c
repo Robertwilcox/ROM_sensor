@@ -36,6 +36,8 @@ typedef struct {
 	uint8_t curr_warmup_mode;
 	uint8_t prev_lift_type;
 	uint8_t prev_warmup_mode;
+    uint8_t workset_deviate;
+
 	bool    warmup_done;
     bool    workset_done;
 } UserInput, *UserInputPtr;
@@ -49,6 +51,26 @@ typedef struct {
 	float y_veloc;
 	float z_veloc;
 } DataPoint, *DataPointPtr;
+
+typedef struct {
+	float x_pos_max;
+	float x_pos_min;
+
+	float y_pos_max;
+	float y_pos_min;
+
+	float z_pos_max;
+	float z_pos_min;
+
+	float x_veloc_max;
+	float x_veloc_min;
+
+	float y_veloc_max;
+	float y_veloc_min;
+
+	float z_veloc_max;
+	float z_veloc_min;
+} MaxMinData, *MaxMinDataPtr;
 
 int init_sys(void);
 
@@ -72,11 +94,13 @@ TaskHandle_t xWorkSet = NULL;
 
 xSemaphoreHandle data_lck = 0;
 
-XIntc        irq;
+XIntc         irq;
 
-UserInputPtr user_input;
-DataPointPtr warmup_set;
-DataPointPtr work_set;
+UserInputPtr  user_input;
+DataPointPtr  warmup_set;
+DataPointPtr  work_set;
+MaxMinDataPtr warmup_max_min;
+MaxMinDataPtr work_set_max_min;
 
 int main(void) {
     // Initialize platform
@@ -194,15 +218,41 @@ void floatToString(float n, char *res, int afterpoint) {
     }
 }
 
-void getCurrentDataPoints(DataPoint* inst_ptr){
+void getCurrentDataPoints(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
 	print("DEBUG: Entered getCurrentDataPoint\r\n");
+    
+    // Update the DataPoint struct with current position and velocity
+    getPositionandVelocity(&inst_ptr);
 
-	inst_ptr->x_pos   =
-    inst_ptr->y_pos   =
-    inst_ptr->z_pos   =
-    inst_ptr->x_veloc =
-    inst_ptr->y_veloc =
-    inst_ptr->z_veloc =
+    // Find the max and min of the positions and velocities
+    cmp_inst_ptr->x_pos_max = (cmp_inst_ptr->x_pos_max > inst_ptr->x_pos) ?
+                               cmp_inst_ptr->x_pos_max : inst_ptr->x_pos;
+    cmp_inst_ptr->y_pos_max = (cmp_inst_ptr->y_pos_max > inst_ptr->y_pos) ?
+                               cmp_inst_ptr->y_pos_max : inst_ptr->y_pos;
+    cmp_inst_ptr->z_pos_max = (cmp_inst_ptr->z_pos_max > inst_ptr->z_pos) ?
+                               cmp_inst_ptr->z_pos_max : inst_ptr->z_pos;
+    
+    cmp_inst_ptr->x_pos_min = (cmp_inst_ptr->x_pos_min < inst_ptr->x_pos) ?
+                               cmp_inst_ptr->x_pos_min : inst_ptr->x_pos;
+    cmp_inst_ptr->y_pos_min = (cmp_inst_ptr->y_pos_min < inst_ptr->y_pos) ?
+                               cmp_inst_ptr->y_pos_min : inst_ptr->y_pos;
+    cmp_inst_ptr->z_pos_min = (cmp_inst_ptr->z_pos_min < inst_ptr->z_pos) ?
+                               cmp_inst_ptr->z_pos_min : inst_ptr->z_pos;
+
+    cmp_inst_ptr->x_veloc_max = (cmp_inst_ptr->x_veloc_max > inst_ptr->x_veloc) ?
+                                 cmp_inst_ptr->x_veloc_max : inst_ptr->x_veloc;
+    cmp_inst_ptr->y_veloc_max = (cmp_inst_ptr->y_veloc_max > inst_ptr->y_veloc) ?
+                                 cmp_inst_ptr->y_veloc_max : inst_ptr->y_veloc;
+    cmp_inst_ptr->z_veloc_max = (cmp_inst_ptr->z_veloc_max > inst_ptr->z_veloc) ?
+                                 cmp_inst_ptr->z_veloc_max : inst_ptr->z_veloc;
+
+    cmp_inst_ptr->x_veloc_min = (cmp_inst_ptr->x_veloc_min < inst_ptr->x_veloc) ?
+                                 cmp_inst_ptr->x_veloc_min : inst_ptr->x_veloc;
+    cmp_inst_ptr->y_veloc_min = (cmp_inst_ptr->y_veloc_min < inst_ptr->y_veloc) ?
+                                 cmp_inst_ptr->y_veloc_min : inst_ptr->y_veloc;
+    cmp_inst_ptr->z_veloc_min = (cmp_inst_ptr->z_veloc_min < inst_ptr->z_veloc) ?
+                                 cmp_inst_ptr->z_veloc_min : inst_ptr->z_veloc;
+
 }
 
 void vMenuTask(void *pvParameters) {
@@ -226,10 +276,27 @@ void vMenuTask(void *pvParameters) {
 						user_input->warmup_done ? "true" : "false",
 						user_input->workset_done ? "true" : "false");
 
-				vTaskResume(xWorkSet);
-				vTaskSuspend(xWarmUp);
+                // Prompt User to select amount of deviation for Work Set
+		        print("Select a Deviation from the range below: \r\n");
+		        print("1%% <= Deviation <= 5%%\nNOTE: Enter as a number\r\n");
+		        user_input->workset_deviate = XUartLite_RecvByte(USB_UART_BASEADDR);
+                
+                // Check if it is a digit and deviation range acceptable
+                if (isdigit(user_input->workset_deviate)      && 
+                    ((atoi(user_input->workset_deviate) >= 1) ||
+                    (atoi(user_input->workset_deviate) < = 5))  ) {
+                    xil_printf("DEBUG:User Entered Work Set Deviation: %d\r\n", 
+                            user_input->workset_deviate);
+                    
+                    vTaskResume(xWorkSet);
+				    vTaskSuspend(xWarmUp);
 
-				vTaskSuspend(NULL); // Suspend vMenuTask
+				    vTaskSuspend(NULL); // Suspend vMenuTask
+                }
+
+                else {
+                    print("Deviation value must be a digit from [1, 5] inclusive r\n");
+                }	
 			}
 
 			// Prompt User to select Warm Up MODE for that lift
@@ -240,7 +307,7 @@ void vMenuTask(void *pvParameters) {
 				// Set current values to previous values
 			    user_input->prev_lift_type   = user_input->curr_lift_type;
 				user_input->prev_warmup_mode = user_input->curr_warmup_mode;
-				user_input-
+
 				vTaskResume(xWarmUp);
 				vTaskSuspend(xWorkSet);
 
@@ -252,7 +319,6 @@ void vMenuTask(void *pvParameters) {
 				user_input->workset_done = false;
 				print("Require to Select 'y' for WarmUp MODE to record a Lift's WarmUp Set\r\n");
 			}
-
 		}
 
 		vTaskDelay(pdMS_TO_TICKS(1000));
@@ -265,7 +331,7 @@ void vWarmUpTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
             print("DEBUG:Mutex Taken\r\n");
-            getCurrentDataPoints(warmup_set);
+            getCurrentDataPoints(warmup_set, warmup_max_min);
 		    user_input->warmup_done = true;
             xSemaphoreGive(data_lck);
 
@@ -286,7 +352,7 @@ void vWorkSetTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
 	        print("DEBUG:Mutex Taken\r\n");
-	        getCurrentDataPoints(work_set);
+	        getCurrentDataPoints(work_set, work_set_max_min);
 	        user_input->workset_done = true;
             xSemaphoreGive(data_lck);
 
