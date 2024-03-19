@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <ctype.h>
+#include <math.h>
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -30,16 +31,6 @@
 // Alias for AXI Timer Peripheral
 #define AXI_TIMER_INTR_NUM      XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR
 
-int init_sys(void);
-
-void vMenuTask(void *pvParameters);
-
-void vDataTask(void *pvParameters);
-
-void vWarmUpTask(void *pvParameters);
-
-void vWorkSetTask(void *pvParameters);
-
 typedef struct {
 	uint8_t curr_lift_type;
 	uint8_t curr_warmup_mode;
@@ -49,8 +40,33 @@ typedef struct {
     bool    workset_done;
 } UserInput, *UserInputPtr;
 
+typedef struct {
+	float x_pos;
+	float y_pos;
+	float z_pos;
+
+	float x_veloc;
+	float y_veloc;
+	float z_veloc;
+} DataPoint, *DataPointPtr;
+
+int init_sys(void);
+
+void reverseString(char* str, int length);
+
+int intToStr(int x, char str[], int d);
+
+void floatToString(float n, char *res, int afterpoint);
+
+void getCurrentDataPoints(DataPoint* inst_ptr);
+
+void vMenuTask(void *pvParameters);
+
+void vWarmUpTask(void *pvParameters);
+
+void vWorkSetTask(void *pvParameters);
+
 TaskHandle_t xMenu    = NULL;
-TaskHandle_t xData    = NULL;
 TaskHandle_t xWarmUp  = NULL;
 TaskHandle_t xWorkSet = NULL;
 
@@ -59,8 +75,8 @@ xSemaphoreHandle data_lck = 0;
 XIntc        irq;
 
 UserInputPtr user_input;
-WarmUpSetPtr warmup_set;
-WorkSetPtr   work_set;
+DataPointPtr warmup_set;
+DataPointPtr work_set;
 
 int main(void) {
     // Initialize platform
@@ -76,12 +92,9 @@ int main(void) {
     data_lck = xSemaphoreCreateMutex();
 
     xTaskCreate(vMenuTask, "MENU TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xMenu);
-    xTaskCreate(vDataTask, "DATA TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xData);
     xTaskCreate(vWarmUpTask, "WARMUP TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWarmUp);
     xTaskCreate(vWorkSetTask,"WORKSET TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWorkSet);
 
-
-    vTaskSuspend(xData);
     vTaskSuspend(xWarmUp);
     vTaskSuspend(xWorkSet);
 
@@ -120,6 +133,78 @@ int init_sys(void) {
 	return XST_SUCCESS;
 }
 
+void reverseString(char* str, int length) {
+    int start = 0;
+    int end = length - 1;
+    while (start < end) {
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+int intToStr(int x, char str[], int d) {
+    int i = 0;
+    bool isNegative = false;
+
+    if (x < 0) {
+        isNegative = true;
+        x = -x;
+    }
+
+    // Extract characters for the string
+    do {
+        str[i++] = (x % 10) + '0';
+        x = x / 10;
+    } while (x);
+
+    // If number of digits required is more, then add 0s at the beginning
+    while (i < d)
+        str[i++] = '0';
+
+    if (isNegative)
+        str[i++] = '-';
+
+    reverseString(str, i);
+    str[i] = '\0';
+    return i;
+}
+
+// Converts a floating point number to string.
+void floatToString(float n, char *res, int afterpoint) {
+    // Extract integer part
+    int ipart = (int)n;
+
+    // Extract floating part
+    float fpart = n - (float)ipart;
+
+    // Convert integer part to string
+    int i = intToStr(ipart, res, 0);
+
+    // Check for display option after point
+    if (afterpoint != 0) {
+        res[i] = '.';  // add dot
+
+        // Get the value of fraction part up to given no. of points after dot.
+        fpart = fpart * pow(10, afterpoint);
+
+        intToStr((int)fpart, res + i + 1, afterpoint);
+    }
+}
+
+void getCurrentDataPoints(DataPoint* inst_ptr){
+	print("DEBUG: Entered getCurrentDataPoint\r\n");
+
+	inst_ptr->x_pos   =
+    inst_ptr->y_pos   =
+    inst_ptr->z_pos   =
+    inst_ptr->x_veloc =
+    inst_ptr->y_veloc =
+    inst_ptr->z_veloc =
+}
+
 void vMenuTask(void *pvParameters) {
 	print("DEBUG: Entered vMenuTask()\r\n");
 
@@ -136,14 +221,13 @@ void vMenuTask(void *pvParameters) {
 		if (isdigit(user_input->curr_lift_type)) {
 			// Check if the previous lift type was called again
 			if (user_input->prev_lift_type == user_input->curr_lift_type) {
-				xil_printf("DEBUG:Lift Type: %d\tWarmUp Set Done: %s\r\n",
+				xil_printf("DEBUG:Lift Type: %d\tWarmUp Set Done: %s\tWork Set Done: %s\r\n",
 						user_input->prev_lift_type,
-						user_input->warmup_done ? "true" : "false");
+						user_input->warmup_done ? "true" : "false",
+						user_input->workset_done ? "true" : "false");
 
 				vTaskResume(xWorkSet);
-
 				vTaskSuspend(xWarmUp);
-				vTaskSuspend(xData);
 
 				vTaskSuspend(NULL); // Suspend vMenuTask
 			}
@@ -156,38 +240,20 @@ void vMenuTask(void *pvParameters) {
 				// Set current values to previous values
 			    user_input->prev_lift_type   = user_input->curr_lift_type;
 				user_input->prev_warmup_mode = user_input->curr_warmup_mode;
-
+				user_input-
 				vTaskResume(xWarmUp);
-
-				vTaskSuspend(xData);
 				vTaskSuspend(xWorkSet);
 
 				vTaskSuspend(NULL);	// Suspend vMenuTask
 			}
 
 			else {
-
+				user_input->warmup_done = false;
+				user_input->workset_done = false;
 				print("Require to Select 'y' for WarmUp MODE to record a Lift's WarmUp Set\r\n");
 			}
+
 		}
-
-		vTaskDelay(pdMS_TO_TICKS(1000));
-	}
-}
-
-void vDataTask(void *pvParameters) {
-	print("DEBUG:Entered vDataTask()\r\n");
-
-	for (;;){
-		if (xSemaphoreTake(data_lck, 1000)) {
-            print("DEBUG:Mutex Taken\r\n");
-
-        }
-
-        else {
-	        print("DEBUG:Mutex In Use\r\n"); 
-        }
-
 
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
@@ -199,14 +265,17 @@ void vWarmUpTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
             print("DEBUG:Mutex Taken\r\n");
-            WarmUpSet_LogRep(warmup_set);
+            getCurrentDataPoints(warmup_set);
 		    user_input->warmup_done = true;
-            xSemaphoreGive(data_lck); 
+            xSemaphoreGive(data_lck);
+
+            vTaskResume(xMenu);
+            vTaskSuspend(NULL);	// Suspend vWarmUpTask
         }
         else {
 	        print("DEBUG:Mutex In Use\r\n"); 
         }
-		
+
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
@@ -217,14 +286,17 @@ void vWorkSetTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
 	        print("DEBUG:Mutex Taken\r\n");
-            WarmUpSet_LogRep(work_set);
+	        getCurrentDataPoints(work_set);
+	        user_input->workset_done = true;
             xSemaphoreGive(data_lck);
+
+            vTaskResume(xMenu);
+            vTaskSuspend(NULL);	// Suspend vWorkSetTask
         }
         else {
 	        print("DEBUG:Mutex In Use\r\n"); 
         }
 		
-
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
