@@ -314,21 +314,21 @@ void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
     // Multiply the deviation for the velocities and positions
     // Let the deviation be split by 2 for the range in mind (min to max)
     // deviated max or min = ((deivation / 2) + 1) * current_max or current_min
-    deviate.x_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_max);
-    deviate.y_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_max);
-    deviate.z_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_max);
+    deviate.x_pos_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_max);
+    deviate.y_pos_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_max);
+    deviate.z_pos_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_max);
 
-    deviate.x_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_max);
-    deviate.y_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_max);
-    deviate.z_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_max);
+    deviate.x_veloc_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_max);
+    deviate.y_veloc_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_max);
+    deviate.z_veloc_max = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_max);
 
-    deviate.x_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_min);
-    deviate.y_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_min);
-    deviate.z_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_min);
+    deviate.x_pos_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_min);
+    deviate.y_pos_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_min);
+    deviate.z_pos_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_min);
 
-    deviate.x_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_min);
-    deviate.y_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_min);
-    deviate.z_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_min);
+    deviate.x_veloc_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_min);
+    deviate.y_veloc_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_min);
+    deviate.z_veloc_min = ((0x30 - user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_min);
     
     // Check the user's current {x, y, z} positions
     // align within the range of the deviated max/min positions
@@ -406,9 +406,9 @@ void vMenuTask(void *pvParameters) {
 		        user_input->workset_deviate = XUartLite_RecvByte(USB_UART_BASEADDR);
                 
                 // Check if it is a digit and deviation range acceptable
-                if (isdigit(user_input->workset_deviate)             &&
-                    ((atoi((char*)user_input->workset_deviate) >= 1) ||
-                    (atoi((char*)user_input->workset_deviate) <= 5))  ) {
+                if (isdigit(user_input->workset_deviate)         &&
+                    (((0x30 - user_input->workset_deviate) >= 1) ||
+                    ((0x30 - user_input->workset_deviate) <= 5))  ) {
                     xil_printf("DEBUG:User Entered Work Set Deviation: %d\r\n", 
                             user_input->workset_deviate);
                     
