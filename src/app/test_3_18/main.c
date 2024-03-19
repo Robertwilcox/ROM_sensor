@@ -16,15 +16,10 @@
 #include "microblaze_sleep.h"
 #include "xil_printf.h"
 #include "semphr.h"
-#include "esp32_BLE_uart.h"
-#include "packetReader.h"
 #include "updatePandV.h"
-
-
-#define MAX_PACKET_SIZE 20
-#define START_MARKER 0x02
-#define END_MARKER 0x03
-
+#include "packetReader.h"
+#include "nexys4IO.h"
+#include "esp32_BLE_uart.h"
 
 // Alias for Interrupt Controller Peripheral
 #define INTC_DEVICE_ID          XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
@@ -40,6 +35,8 @@
 // Alias for AXI Timer Peripheral
 #define AXI_TIMER_INTR_NUM      XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR
 
+volatile bool transmitData = true; // Global flag to control data transmission
+
 typedef struct {
 	uint8_t curr_lift_type;
 	uint8_t curr_warmup_mode;
@@ -50,7 +47,6 @@ typedef struct {
 	bool    warmup_done;
     bool    workset_done;
 } UserInput, *UserInputPtr;
-
 
 typedef struct {
 	float x_pos_max;
@@ -80,7 +76,7 @@ int intToStr(int x, char str[], int d);
 
 void floatToString(float n, char *res, int afterpoint);
 
-void getCurrentDataPoints(DataPoint* data_ptr, MaxMinData* minMax_ptr);
+void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr);
 
 void vMenuTask(void *pvParameters);
 
@@ -88,9 +84,12 @@ void vWarmUpTask(void *pvParameters);
 
 void vWorkSetTask(void *pvParameters);
 
+void vSwitchMonitorTask(void *pvParameters);
+
 TaskHandle_t xMenu    = NULL;
 TaskHandle_t xWarmUp  = NULL;
 TaskHandle_t xWorkSet = NULL;
+TaskHandle_t xSwitchMonitor = NULL;
 
 xSemaphoreHandle data_lck = 0;
 
@@ -101,6 +100,14 @@ DataPointPtr  warmup_set;
 DataPointPtr  work_set;
 MaxMinDataPtr warmup_max_min;
 MaxMinDataPtr work_set_max_min;
+
+static float      prev_velocity            = 0.0f; // Previous velocity of the primary axis (z-axis)
+static TickType_t repStartTime             = 0;
+static int        repCount                 = 0;
+static int        directionChangeCount     = 0; // Counts consecutive velocity readings in the new direction
+static const int  directionChangeThreshold = 3; // Threshold for confirming a direction change
+static TickType_t totalRepDuration         = 0; // Accumulates total duration of all reps
+static TickType_t avgRepDuration           = 0; // Avg duration of all reps
 
 int main(void) {
     // Initialize platform
@@ -118,6 +125,7 @@ int main(void) {
     xTaskCreate(vMenuTask, "MENU TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xMenu);
     xTaskCreate(vWarmUpTask, "WARMUP TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWarmUp);
     xTaskCreate(vWorkSetTask,"WORKSET TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWorkSet);
+    xTaskCreate(vSwitchMonitorTask, "Switch Monitor Task", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xSwitchMonitor);
 
     vTaskSuspend(xWarmUp);
     vTaskSuspend(xWorkSet);
@@ -198,6 +206,13 @@ int intToStr(int x, char str[], int d) {
 
 // Converts a floating point number to string.
 void floatToString(float n, char *res, int afterpoint) {
+
+    // Handle negative numbers
+    bool isNegative = n < 0;
+    if (isNegative) {
+        n = -n; // Make n positive
+    }
+
     // Extract integer part
     int ipart = (int)n;
 
@@ -207,31 +222,29 @@ void floatToString(float n, char *res, int afterpoint) {
     // Convert integer part to string
     int i = intToStr(ipart, res, 0);
 
+    // If the number is negative, shift everything one place to the right
+    // to insert the negative sign at the beginning
+    if (isNegative) {
+        for (int j = i; j >= 0; j--) {
+            res[j + 1] = res[j];
+        }
+        res[0] = '-';
+        i++; // Increase string length by one
+    }
+
     // Check for display option after point
     if (afterpoint != 0) {
-        res[i] = '.';  // add dot
+        res[i] = '.'; // add dot
 
         // Get the value of fraction part up to given no. of points after dot.
         fpart = fpart * pow(10, afterpoint);
 
-        intToStr((int)fpart, res + i + 1, afterpoint);
+        intToStr((int)(fpart + 0.5), res + i + 1, afterpoint); // Adding 0.5 for rounding off purpose
     }
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// CODE ROBERT ADDED vvv
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Global variables to maintain state across function calls
-static float prev_velocity = 0.0f; // Previous velocity of the primary axis (z-axis)
-static TickType_t repStartTime = 0;
-static int repCount = 0;
-static int directionChangeCount = 0; // Counts consecutive velocity readings in the new direction
-static const int directionChangeThreshold = 3; // Threshold for confirming a direction change
-static TickType_t totalRepDuration = 0; // Accumulates total duration of all reps
-static TickType_t avgRepDuration = 0; // Avg duration of all reps
-
-void LogRepCount(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr) {
-    print("DEBUG: Entered LogRep()\r\n");
+void LogRepCount(DataPoint* inst_ptr) {
+    print("DEBUG: Entered LogRepCount()\r\n");
 
     // Update inst_ptr with current values from sensor
     getPositionAndVelocity(inst_ptr);
@@ -269,7 +282,7 @@ void LogRepCount(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr) {
             avgRepDuration = totalRepDuration / repCount;
 
             char debugMessage[100];
-            xil_printf(debugMessage, sizeof(debugMessage), "Rep %d detected. Duration: %lu ticks. Average Duration: %lu ticks.\r\n", repCount, repDuration, averageRepDuration);
+            xil_printf(debugMessage, sizeof(debugMessage), "Rep %d detected. Duration: %lu ticks. Average Duration: %lu ticks.\r\n", repCount, repDuration, avgRepDuration);
             print(debugMessage);
 
             // Reset rep start time for the next rep
@@ -285,9 +298,111 @@ void LogRepCount(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr) {
     prev_velocity = primary_velocity;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// CODE ROBERT ADDED ^^^
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
+	print("DEBUG: Entered Exercise()\r\n");
+
+    MaxMinData deviate; // store the deviated positions and velocities locally
+
+	// Update the DataPoint struct with current position and velocity
+	// Logging the Rep
+	LogRepCount(inst_ptr);
+
+    // Find the max and min of the positions and velocities
+    cmp_inst_ptr->x_pos_max = (cmp_inst_ptr->x_pos_max > inst_ptr->x_pos) ?
+                               cmp_inst_ptr->x_pos_max : inst_ptr->x_pos;
+    cmp_inst_ptr->y_pos_max = (cmp_inst_ptr->y_pos_max > inst_ptr->y_pos) ?
+                               cmp_inst_ptr->y_pos_max : inst_ptr->y_pos;
+    cmp_inst_ptr->z_pos_max = (cmp_inst_ptr->z_pos_max > inst_ptr->z_pos) ?
+                               cmp_inst_ptr->z_pos_max : inst_ptr->z_pos;
+
+    cmp_inst_ptr->x_pos_min = (cmp_inst_ptr->x_pos_min < inst_ptr->x_pos) ?
+                               cmp_inst_ptr->x_pos_min : inst_ptr->x_pos;
+    cmp_inst_ptr->y_pos_min = (cmp_inst_ptr->y_pos_min < inst_ptr->y_pos) ?
+                               cmp_inst_ptr->y_pos_min : inst_ptr->y_pos;
+    cmp_inst_ptr->z_pos_min = (cmp_inst_ptr->z_pos_min < inst_ptr->z_pos) ?
+                               cmp_inst_ptr->z_pos_min : inst_ptr->z_pos;
+
+    cmp_inst_ptr->x_veloc_max = (cmp_inst_ptr->x_veloc_max > inst_ptr->x_veloc) ?
+                                 cmp_inst_ptr->x_veloc_max : inst_ptr->x_veloc;
+    cmp_inst_ptr->y_veloc_max = (cmp_inst_ptr->y_veloc_max > inst_ptr->y_veloc) ?
+                                 cmp_inst_ptr->y_veloc_max : inst_ptr->y_veloc;
+    cmp_inst_ptr->z_veloc_max = (cmp_inst_ptr->z_veloc_max > inst_ptr->z_veloc) ?
+                                 cmp_inst_ptr->z_veloc_max : inst_ptr->z_veloc;
+
+    cmp_inst_ptr->x_veloc_min = (cmp_inst_ptr->x_veloc_min < inst_ptr->x_veloc) ?
+                                 cmp_inst_ptr->x_veloc_min : inst_ptr->x_veloc;
+    cmp_inst_ptr->y_veloc_min = (cmp_inst_ptr->y_veloc_min < inst_ptr->y_veloc) ?
+                                 cmp_inst_ptr->y_veloc_min : inst_ptr->y_veloc;
+    cmp_inst_ptr->z_veloc_min = (cmp_inst_ptr->z_veloc_min < inst_ptr->z_veloc) ?
+                                 cmp_inst_ptr->z_veloc_min : inst_ptr->z_veloc;
+
+    // Multiply the deviation for the velocities and positions
+    // Let the deviation be split by 2 for the range in mind (min to max)
+    // deviated max or min = ((deivation / 2) + 1) * current_max or current_min
+    deviate.x_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_max);
+    deviate.y_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_max);
+    deviate.z_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_max);
+
+    deviate.x_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_max);
+    deviate.y_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_max);
+    deviate.z_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_max);
+
+    deviate.x_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_min);
+    deviate.y_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_min);
+    deviate.z_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_min);
+
+    deviate.x_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_min);
+    deviate.y_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_min);
+    deviate.z_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_min);
+
+    // Check the user's current {x, y, z} positions
+    // align within the range of the deviated max/min positions
+    if (inst_ptr->x_pos < deviate.x_pos_min) {
+        print("Position is under the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->x_pos > deviate.x_pos_max) {
+        print("Position is over the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->y_pos < deviate.y_pos_min) {
+        print("Position is under the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->y_pos > deviate.y_pos_max) {
+        print("Position is over the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->z_pos < deviate.z_pos_min) {
+        print("Position is under the selected deviation in the z axis\r\n");
+    }
+    else if (inst_ptr->z_pos > deviate.z_pos_max) {
+        print("Position is over the selected deviation in the z axis\r\n");
+    }
+    else {
+        print("Positions within the range of the selected deviation!\r\n");
+    }
+
+    // Check the user's current {x, y, z} velocities
+    // align within the range of the deviated max/min velocities
+    if (inst_ptr->x_veloc < deviate.x_veloc_min) {
+        print("Velocity is under the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->x_veloc > deviate.x_veloc_max) {
+        print("Velocity is over the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->y_veloc < deviate.y_veloc_min) {
+        print("Velocity is under the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->y_veloc > deviate.y_veloc_max) {
+        print("Velocity is over the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->z_veloc < deviate.z_veloc_min) {
+        print("Velocity is under the selected deviation in the z axis\r\n");
+    }
+    else if (inst_ptr->z_veloc > deviate.z_veloc_max) {
+        print("Velocity is over the selected deviation in the z axis\r\n");
+    }
+    else {
+        print("Velocities within the range of the selected deviation!\r\n");
+    }
+}
 
 void vMenuTask(void *pvParameters) {
 	print("DEBUG: Entered vMenuTask()\r\n");
@@ -301,6 +416,30 @@ void vMenuTask(void *pvParameters) {
 		print("Select a Lift from the list by the number it is associated with: \r\n");
 		print("0 [Squat], 1 [Bench], 2 [Bicep Curl]...\r\n");
 		user_input->curr_lift_type = XUartLite_RecvByte(USB_UART_BASEADDR);
+
+        switch(user_input->curr_lift_type) {
+            case '0': // SQUAT
+                const char* squatCommand = "SQUAT\n";
+                for (int i = 0; squatCommand[i] != '\0'; i++) {
+                    sendByteToESP32(squatCommand[i]);
+                }
+                break;
+            case '1': // BENCH_PRESS
+                const char* benchCommand = "BENCH_PRESS\n";
+                for (int i = 0; benchCommand[i] != '\0'; i++) {
+                    sendByteToESP32(benchCommand[i]);
+                }
+                break;
+            case '2': // BICEP_CURL
+                const char* curlCommand = "BICEP_CURL\n";
+                for (int i = 0; curlCommand[i] != '\0'; i++) {
+                    sendByteToESP32(curlCommand[i]);
+                }
+                break;
+            default:
+                print("Invalid selection. Please select 0, 1, or 2.\r\n");
+                break;
+        }
 
 		if (isdigit(user_input->curr_lift_type)) {
 			// Check if the previous lift type was called again
@@ -316,9 +455,9 @@ void vMenuTask(void *pvParameters) {
 		        user_input->workset_deviate = XUartLite_RecvByte(USB_UART_BASEADDR);
 
                 // Check if it is a digit and deviation range acceptable
-                if (isdigit(user_input->workset_deviate)      &&
-                    ((atoi(user_input->workset_deviate) >= 1) ||
-                    (atoi(user_input->workset_deviate) < = 5))  ) {
+                if (isdigit(user_input->workset_deviate)             &&
+                    ((atoi((char*)user_input->workset_deviate) >= 1) ||
+                    (atoi((char*)user_input->workset_deviate) <= 5))  ) {
                     xil_printf("DEBUG:User Entered Work Set Deviation: %d\r\n",
                             user_input->workset_deviate);
 
@@ -355,7 +494,7 @@ void vMenuTask(void *pvParameters) {
 			}
 		}
 
-		vTaskDelay(pdMS_TO_TICKS(1000));
+		vTaskDelay(pdMS_TO_TICKS(400));
 	}
 }
 
@@ -363,40 +502,101 @@ void vWarmUpTask(void *pvParameters) {
 	print("DEBUG:Entered vWarmUpTask()\r\n");
 
 	for (;;){
-        if (xSemaphoreTake(data_lck, 1000)) {
-            print("DEBUG:Mutex Taken\r\n");
-            getCurrentDataPoints(warmup_set, warmup_max_min);
-		    user_input->warmup_done = true;
-            xSemaphoreGive(data_lck);
-
+		if(transmitData) {
+			// Send start command to ESP32
+			const char* startCommand = "START\n";
+			for (int i = 0; startCommand[i] != '\0'; i++) {
+				sendByteToESP32(startCommand[i]);
+			}
+			if (1) {
+				//print("DEBUG:Mutex Taken\r\n");
+				Exercise(warmup_set, warmup_max_min);
+				user_input->warmup_done = true;
+				//xSemaphoreGive(data_lck);
+			}
+			else {
+				print("DEBUG:Mutex In Use\r\n");
+			}
+		} else {
+			print("DEBUG:Data collection paused, returning to menu\r\n");
             vTaskResume(xMenu);
-            vTaskSuspend(NULL);	// Suspend vWarmUpTask
-        }
-        else {
-	        print("DEBUG:Mutex In Use\r\n");
-        }
-
-		vTaskDelay(pdMS_TO_TICKS(1000));
+            vTaskSuspend(NULL);	// Suspend vWorkSetTask
+		}
+		vTaskDelay(pdMS_TO_TICKS(400));
 	}
 }
 
 void vWorkSetTask(void *pvParameters) {
 	print("DEBUG:Entered vWorkSetTask()\r\n");
-
 	for (;;){
-        if (xSemaphoreTake(data_lck, 1000)) {
-	        print("DEBUG:Mutex Taken\r\n");
-	        getCurrentDataPoints(work_set, work_set_max_min);
-	        user_input->workset_done = true;
-            xSemaphoreGive(data_lck);
+		if(transmitData) {
+			// Send start command to ESP32
+			const char* startCommand = "START\n";
+			for (int i = 0; startCommand[i] != '\0'; i++) {
+				sendByteToESP32(startCommand[i]);
+			}
+			if (xSemaphoreTake(data_lck, 1000)) {
+				print("DEBUG:Mutex Taken\r\n");
+				Exercise(work_set, work_set_max_min);
+				user_input->workset_done = true;
+				xSemaphoreGive(data_lck);
 
-            vTaskResume(xMenu);
-            vTaskSuspend(NULL);	// Suspend vWorkSetTask
-        }
-        else {
-	        print("DEBUG:Mutex In Use\r\n");
-        }
-
-		vTaskDelay(pdMS_TO_TICKS(1000));
+				vTaskResume(xMenu);
+				vTaskSuspend(NULL);	// Suspend vWorkSetTask
+			}
+			else {
+				print("DEBUG:Mutex In Use\r\n");
+			}
+		} else {
+			print("DEBUG:Data collection paused, returning to menu\r\n");
+			vTaskResume(xMenu);
+			vTaskSuspend(NULL);	// Suspend vWorkSetTask
+		}
+		vTaskDelay(pdMS_TO_TICKS(400));
 	}
+}
+
+// Task to monitor switch 0 to control data transmission
+void vSwitchMonitorTask(void *pvParameters) {
+    uint16_t switchStatePrev = 0;
+    uint16_t switchState = 0;
+
+    while (1) {
+        switchState = NX4IO_getSwitches(); // Get the current state of the switches
+
+        // Handle START/STOP data transmission based on switch 0
+        if ((switchState & 0x0001) != (switchStatePrev & 0x0001)) {
+            if (switchState & 0x0001) { // If switch 0 is ON (STOP)
+                const char* stopCommand = "STOP\n";
+                for (int i = 0; stopCommand[i] != '\0'; i++) {
+                    sendByteToESP32(stopCommand[i]);
+                }
+                transmitData = false; // Stop data transmission
+                xil_printf("Data transmission stopped.\n");
+            } else {
+                transmitData = true; // Resume data transmission
+                xil_printf("Data transmission resumed.\n");
+            }
+        }
+
+        // Handle data type change based on switch 1 without affecting data transmission
+        if ((switchState & 0x0002) != (switchStatePrev & 0x0002)) {
+            if (switchState & 0x0002) { // If switch 1 is ON (WORKING mode)
+                const char* workingCommand = "WORKING\n";
+                for (int i = 0; workingCommand[i] != '\0'; i++) {
+                    sendByteToESP32(workingCommand[i]);
+                }
+                xil_printf("Switched to WORKING data mode.\n");
+            } else { // If switch 1 is OFF (WARMUP mode)
+                const char* warmupCommand = "WARMUP\n";
+                for (int i = 0; warmupCommand[i] != '\0'; i++) {
+                    sendByteToESP32(warmupCommand[i]);
+                }
+                xil_printf("Switched to WARMUP data mode.\n");
+            }
+        }
+
+        switchStatePrev = switchState; // Update previous state
+        vTaskDelay(pdMS_TO_TICKS(400)); // Delay for debouncing
+    }
 }
