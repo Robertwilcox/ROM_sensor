@@ -16,6 +16,7 @@
 #include "microblaze_sleep.h"
 #include "xil_printf.h"
 #include "semphr.h"
+#include "UpdatePNV.h"
 
 // Alias for Interrupt Controller Peripheral
 #define INTC_DEVICE_ID          XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
@@ -218,11 +219,14 @@ void floatToString(float n, char *res, int afterpoint) {
     }
 }
 
-void getCurrentDataPoints(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
-	print("DEBUG: Entered getCurrentDataPoint\r\n");
+void LogRep(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
+	print("DEBUG: Entered LogRep()\r\n");
     
+    float prev_y_veloc_max, prev_y_veloc_min;
+
     // Update the DataPoint struct with current position and velocity
     getPositionandVelocity(&inst_ptr);
+    TickType_t prev_tick = xTaskGetTickCount();
 
     // Find the max and min of the positions and velocities
     cmp_inst_ptr->x_pos_max = (cmp_inst_ptr->x_pos_max > inst_ptr->x_pos) ?
@@ -253,6 +257,11 @@ void getCurrentDataPoints(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
     cmp_inst_ptr->z_veloc_min = (cmp_inst_ptr->z_veloc_min < inst_ptr->z_veloc) ?
                                  cmp_inst_ptr->z_veloc_min : inst_ptr->z_veloc;
 
+    // Logging the Rep
+    if (!signbit(cmp_inst_ptr->y_veloc_max)
+
+
+    // Deviation checking
 }
 
 void vMenuTask(void *pvParameters) {
