@@ -166,9 +166,34 @@ int init_sys(void) {
 void LogRepCount(DataPoint* inst_ptr) {
     xil_printf("DEBUG: Entered LogRepCount()\r\n");
 
-    // Update inst_ptr with current values from sensor
-    getPositionAndVelocity(inst_ptr);
-    xil_printf("DEBUG: After getPositionAndVelocity()\r\n");
+    // Buffer to hold the string representation of floats
+    char floatStr[20];
+
+    if(transmitData){
+    	xil_printf("Should print packet\r\n");
+
+		if (readPacket()) { // Check if a packet was read successfully
+
+			xil_printf("\r\n");
+
+			getPositionAndVelocity(&myDataPoint);
+
+			// Convert position values to strings and print
+			floatToString(myDataPoint.x_pos, floatStr, 2);
+			xil_printf("%s ", floatStr);
+
+			floatToString(myDataPoint.y_pos, floatStr, 2);
+			xil_printf("%s ", floatStr);
+
+			floatToString(myDataPoint.z_pos, floatStr, 2);
+			xil_printf("%s\r", floatStr);
+
+		}
+		if(!readPacket()) {
+			xil_printf("PACKET NOT READ\r\n");
+		}
+	}
+
 
     // Directly use z-axis velocity, as it's the primary axis for all exercises
     float primary_velocity = inst_ptr->z_veloc;
@@ -217,7 +242,7 @@ void LogRepCount(DataPoint* inst_ptr) {
 
     // Update for next call
     prev_velocity = primary_velocity;
-    xil_printf("DEBUG: After logRepCount()\r\n");
+    //xil_printf("DEBUG: After logRepCount()\r\n");
 }
 
 void vUARTCommunicationTask(void *pvParameters) {
@@ -244,7 +269,7 @@ void vUARTCommunicationTask(void *pvParameters) {
                 floatToString(myDataPoint.z_pos, floatStr, 2);
                 xil_printf("%s\r", floatStr);
 
-                /*
+                /*-
                 // Convert velocity values to strings and print
                 floatToString(myDataPoint.x_veloc, floatStr, 2);
                 xil_printf("Velocity X: %s\r\n", floatStr);
@@ -273,8 +298,8 @@ void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
     // Logging the Rep
     LogRepCount(inst_ptr);
 
-
     /*
+
     // Find the max and min of the positions and velocities
     cmp_inst_ptr->x_pos_max = (cmp_inst_ptr->x_pos_max > inst_ptr->x_pos) ?
                                cmp_inst_ptr->x_pos_max : inst_ptr->x_pos;
@@ -472,11 +497,12 @@ void vWarmUpTask(void *pvParameters) {
 
     for (;;){
         if(transmitData) {
+        	/*
             // Send start command to ESP32
             const char* startCommand = "START\n";
             for (int i = 0; startCommand[i] != '\0'; i++) {
                 sendByteToESP32(startCommand[i]);
-            }
+            }*/
             if (1) {
                 //print("DEBUG:Mutex Taken\r\n");
                 Exercise(warmup_set, warmup_max_min);
@@ -491,7 +517,7 @@ void vWarmUpTask(void *pvParameters) {
             vTaskResume(xMenu);
             vTaskSuspend(NULL); // Suspend vWorkSetTask
         }
-        vTaskDelay(pdMS_TO_TICKS(400));
+        vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }
 
@@ -708,14 +734,14 @@ int main(void) {
     data_lck = xSemaphoreCreateMutex();
 
     xTaskCreate(vMenuTask, "MENU TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xMenu);
-    //xTaskCreate(vWarmUpTask, "WARMUP TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWarmUp);
+    //xTaskCreate(vWarmUpTask, "WARMUP TASK", configMINIMAL_STACK_SIZE * 3, NULL, tskIDLE_PRIORITY + 1, &xWarmUp);
     //xTaskCreate(vWorkSetTask,"WORKSET TASK", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, &xWorkSet);
     xTaskCreate(vUARTCommunicationTask, "UART Communication Task", configMINIMAL_STACK_SIZE * 2, NULL, tskIDLE_PRIORITY + 1, &xUartTest);
     xTaskCreate(vSwitchMonitorTask, "Switch Monitor Task", configMINIMAL_STACK_SIZE * 2, NULL, tskIDLE_PRIORITY + 1, &xSwitchMonitor);
 
     //vTaskSuspend(xWarmUp);
    // vTaskSuspend(xWorkSet);
-    vTaskSuspend(xUartTest);
+      vTaskSuspend(xUartTest);
 
 
 
