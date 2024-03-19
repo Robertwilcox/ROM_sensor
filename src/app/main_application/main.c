@@ -16,7 +16,8 @@
 #include "microblaze_sleep.h"
 #include "xil_printf.h"
 #include "semphr.h"
-#include "UpdatePNV.h"
+#include "updatePandV.h"
+#include "packetReader.h"
 
 // Alias for Interrupt Controller Peripheral
 #define INTC_DEVICE_ID          XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID
@@ -42,16 +43,6 @@ typedef struct {
 	bool    warmup_done;
     bool    workset_done;
 } UserInput, *UserInputPtr;
-
-typedef struct {
-	float x_pos;
-	float y_pos;
-	float z_pos;
-
-	float x_veloc;
-	float y_veloc;
-	float z_veloc;
-} DataPoint, *DataPointPtr;
 
 typedef struct {
 	float x_pos_max;
@@ -81,7 +72,7 @@ int intToStr(int x, char str[], int d);
 
 void floatToString(float n, char *res, int afterpoint);
 
-void getCurrentDataPoints(DataPoint* inst_ptr);
+void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr);
 
 void vMenuTask(void *pvParameters);
 
@@ -102,6 +93,14 @@ DataPointPtr  warmup_set;
 DataPointPtr  work_set;
 MaxMinDataPtr warmup_max_min;
 MaxMinDataPtr work_set_max_min;
+
+static float      prev_velocity            = 0.0f; // Previous velocity of the primary axis (z-axis)
+static TickType_t repStartTime             = 0;
+static int        repCount                 = 0;
+static int        directionChangeCount     = 0; // Counts consecutive velocity readings in the new direction
+static const int  directionChangeThreshold = 3; // Threshold for confirming a direction change
+static TickType_t totalRepDuration         = 0; // Accumulates total duration of all reps
+static TickType_t avgRepDuration           = 0; // Avg duration of all reps
 
 int main(void) {
     // Initialize platform
@@ -219,14 +218,69 @@ void floatToString(float n, char *res, int afterpoint) {
     }
 }
 
-void LogRep(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
-	print("DEBUG: Entered LogRep()\r\n");
-    
-    float prev_y_veloc_max, prev_y_veloc_min;
+void LogRepCount(DataPoint* inst_ptr) {
+    print("DEBUG: Entered LogRepCount()\r\n");
 
-    // Update the DataPoint struct with current position and velocity
-    getPositionandVelocity(&inst_ptr);
-    TickType_t prev_tick = xTaskGetTickCount();
+    // Update inst_ptr with current values from sensor
+    getPositionAndVelocity(inst_ptr);
+
+    // Directly use z-axis velocity, as it's the primary axis for all exercises
+    float primary_velocity = inst_ptr->z_veloc;
+
+    // Check for a potential change in direction by looking for a zero crossing in velocity
+    if ((prev_velocity <= 0 && primary_velocity > 0) || (prev_velocity > 0 && primary_velocity <= 0)) {
+
+        // Increment the count of potential direction changes
+        directionChangeCount++;
+    } else {
+
+        // If the velocity continues in the same direction, reset the potential direction change count
+        if (directionChangeCount > 0 && ((primary_velocity > 0 && prev_velocity > 0) || (primary_velocity <= 0 && prev_velocity <= 0))) {
+            directionChangeCount = 0; // Reset count if we continue in the same direction
+        }
+    }
+
+    // Confirm the change in direction if we have seen enough consecutive readings
+    if (directionChangeCount >= directionChangeThreshold) {
+
+        // Confirmed direction change; handle as a rep
+        if (repStartTime != 0) { // Ensure this isn't the first data point
+
+            TickType_t currentTick = xTaskGetTickCount();
+            TickType_t repDuration = currentTick - repStartTime;
+
+            // Accumulate total rep duration
+            totalRepDuration += repDuration;
+            repCount++;
+
+            // Calculate the average rep duration
+            avgRepDuration = totalRepDuration / repCount;
+
+            char debugMessage[100];
+            xil_printf(debugMessage, sizeof(debugMessage), "Rep %d detected. Duration: %lu ticks. Average Duration: %lu ticks.\r\n", repCount, repDuration, avgRepDuration);
+            print(debugMessage);
+
+            // Reset rep start time for the next rep
+            repStartTime = currentTick;
+        } else {
+            // First confirmed direction change, start tracking time
+            repStartTime = xTaskGetTickCount();
+        }
+        directionChangeCount = 0; // Reset count after confirming a rep
+    }
+
+    // Update for next call
+    prev_velocity = primary_velocity;
+}
+
+void Exercise(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
+	print("DEBUG: Entered Exercise()\r\n");
+    
+    MaxMinData deviate; // store the deviated positions and velocities locally
+
+	// Update the DataPoint struct with current position and velocity
+	// Logging the Rep
+	LogRepCount(inst_ptr);
 
     // Find the max and min of the positions and velocities
     cmp_inst_ptr->x_pos_max = (cmp_inst_ptr->x_pos_max > inst_ptr->x_pos) ?
@@ -257,11 +311,72 @@ void LogRep(DataPoint* inst_ptr, MaxMinData* cmp_inst_ptr){
     cmp_inst_ptr->z_veloc_min = (cmp_inst_ptr->z_veloc_min < inst_ptr->z_veloc) ?
                                  cmp_inst_ptr->z_veloc_min : inst_ptr->z_veloc;
 
-    // Logging the Rep
-    if (!signbit(cmp_inst_ptr->y_veloc_max)
+    // Multiply the deviation for the velocities and positions
+    // Let the deviation be split by 2 for the range in mind (min to max)
+    // deviated max or min = ((deivation / 2) + 1) * current_max or current_min
+    deviate.x_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_max);
+    deviate.y_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_max);
+    deviate.z_pos_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_max);
 
+    deviate.x_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_max);
+    deviate.y_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_max);
+    deviate.z_veloc_max = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_max);
 
-    // Deviation checking
+    deviate.x_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_pos_min);
+    deviate.y_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_pos_min);
+    deviate.z_pos_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_pos_min);
+
+    deviate.x_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->x_veloc_min);
+    deviate.y_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->y_veloc_min);
+    deviate.z_veloc_min = (atoi((char*)user_input->workset_deviate) / 2 + 1) * (cmp_inst_ptr->z_veloc_min);
+    
+    // Check the user's current {x, y, z} positions
+    // align within the range of the deviated max/min positions
+    if (inst_ptr->x_pos < deviate.x_pos_min) {
+        print("Position is under the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->x_pos > deviate.x_pos_max) {
+        print("Position is over the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->y_pos < deviate.y_pos_min) {
+        print("Position is under the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->y_pos > deviate.y_pos_max) {
+        print("Position is over the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->z_pos < deviate.z_pos_min) {
+        print("Position is under the selected deviation in the z axis\r\n");
+    }
+    else if (inst_ptr->z_pos > deviate.z_pos_max) {
+        print("Position is over the selected deviation in the z axis\r\n");
+    }
+    else {
+        print("Positions within the range of the selected deviation!\r\n");
+    }
+
+    // Check the user's current {x, y, z} velocities
+    // align within the range of the deviated max/min velocities
+    if (inst_ptr->x_veloc < deviate.x_veloc_min) {
+        print("Velocity is under the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->x_veloc > deviate.x_veloc_max) {
+        print("Velocity is over the selected deviation in the x axis\r\n");
+    }
+    else if (inst_ptr->y_veloc < deviate.y_veloc_min) { 
+        print("Velocity is under the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->y_veloc > deviate.y_veloc_max) {
+        print("Velocity is over the selected deviation in the y axis\r\n");
+    }
+    else if (inst_ptr->z_veloc < deviate.z_veloc_min) {
+        print("Velocity is under the selected deviation in the z axis\r\n");
+    }
+    else if (inst_ptr->z_veloc > deviate.z_veloc_max) {
+        print("Velocity is over the selected deviation in the z axis\r\n");
+    }
+    else {
+        print("Velocities within the range of the selected deviation!\r\n");
+    }
 }
 
 void vMenuTask(void *pvParameters) {
@@ -291,9 +406,9 @@ void vMenuTask(void *pvParameters) {
 		        user_input->workset_deviate = XUartLite_RecvByte(USB_UART_BASEADDR);
                 
                 // Check if it is a digit and deviation range acceptable
-                if (isdigit(user_input->workset_deviate)      && 
-                    ((atoi(user_input->workset_deviate) >= 1) ||
-                    (atoi(user_input->workset_deviate) < = 5))  ) {
+                if (isdigit(user_input->workset_deviate)             &&
+                    ((atoi((char*)user_input->workset_deviate) >= 1) ||
+                    (atoi((char*)user_input->workset_deviate) <= 5))  ) {
                     xil_printf("DEBUG:User Entered Work Set Deviation: %d\r\n", 
                             user_input->workset_deviate);
                     
@@ -340,7 +455,7 @@ void vWarmUpTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
             print("DEBUG:Mutex Taken\r\n");
-            getCurrentDataPoints(warmup_set, warmup_max_min);
+            Exercise(warmup_set, warmup_max_min);
 		    user_input->warmup_done = true;
             xSemaphoreGive(data_lck);
 
@@ -361,7 +476,7 @@ void vWorkSetTask(void *pvParameters) {
 	for (;;){
         if (xSemaphoreTake(data_lck, 1000)) {
 	        print("DEBUG:Mutex Taken\r\n");
-	        getCurrentDataPoints(work_set, work_set_max_min);
+	        Exercise(work_set, work_set_max_min);
 	        user_input->workset_done = true;
             xSemaphoreGive(data_lck);
 
