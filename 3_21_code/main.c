@@ -213,13 +213,24 @@ void DataPrintTask(void *pvParameters) {
                 xil_printf("\r\n");
                 // Convert position values to strings and print
                 floatToString(tempData.x_pos, floatStr, 2);
-                xil_printf("%s ", floatStr);
+                xil_printf("Position Data: x = %s,", floatStr);
 
                 floatToString(tempData.y_pos, floatStr, 2);
-                xil_printf("%s ", floatStr);
+                xil_printf(" y = %s,", floatStr);
 
                 floatToString(tempData.z_pos, floatStr, 2);
-                xil_printf("%s\r\n", floatStr);
+                xil_printf(" z = %s\r\n", floatStr);
+
+                                xil_printf("\r\n");
+                // Convert position values to strings and print
+                floatToString(tempData.x_veloc, floatStr, 2);
+                xil_printf("Velocity Data: x = %s,", floatStr);
+
+                floatToString(tempData.y_veloc, floatStr, 2);
+                xil_printf(" y = %s,", floatStr);
+
+                floatToString(tempData.z_veloc, floatStr, 2);
+                xil_printf(" z = %s\r\n", floatStr);
 
                 // Update min and max values
 				dataExtremes.minX = fminf(dataExtremes.minX, receivedData.x_pos);
@@ -461,7 +472,7 @@ void vSwitchMonitorTask(void *pvParameters) {
             if (switchState & 0x0004) { // If switch 2 is ON (WORKING mode)
                 currentState = STATE_MENU;
             } else { 
-                    xil_printf("SWITCH 2 is off\r\n");
+                   // xil_printf("SWITCH 2 is off\r\n");
             }
         }
 
@@ -509,7 +520,7 @@ void vSwitchMonitorTask(void *pvParameters) {
                 xil_printf("max = %s\n\n", floatStr);
 
             } else { 
-                    xil_printf("SWITCH 3 is off\r\n");
+                   // xil_printf("SWITCH 3 is off\r\n");
             }
         }
 
@@ -528,7 +539,7 @@ int main(void) {
         return XST_FAILURE;
     }
 
-    dataPointQueue0 = xQueueCreate(10, sizeof(DataPoint)); // Create a queue for 10 DataPoint items
+    dataPointQueue0 = xQueueCreate(20, sizeof(DataPoint)); // Create a queue for 10 DataPoint items
     //dataPointQueue1 = xQueueCreate(10, sizeof(DataPoint)); // Create a queue for 10 DataPoint items
 
     if (dataPointQueue0 != NULL) {
