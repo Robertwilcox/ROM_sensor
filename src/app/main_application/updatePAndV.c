@@ -1,5 +1,14 @@
-#include "updatePandV.h"
+/**
+ * @file updataPandV.c
+ * @brief file for updatting global struct with position and velocity
+ * data from packetReader.h
+ *
+ * @author Robert Wilcox, Ibrahim Binmahfood
+ * @version 1.0
+ * @date 3.21.2024
+ */
 
+#include "updatePandV.h"
 #include <stdint.h>
 #include "xil_printf.h"
 #include "esp32_BLE_uart.h"
