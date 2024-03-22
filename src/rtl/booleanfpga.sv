@@ -1,8 +1,8 @@
 /*
 * Authors: Ibrahim Binmahfood and Robert Wilcox
 * ECE544, Kravitz
-* Project 2, Top Module booleanfpga.sv - rtl module
-* 02/21/2024
+* Final Project, Top Module booleanfpga.sv - rtl module
+* 03/21/2024
 *
 * Platform: MicroBlaze AXI based Embedded System on Boolean board
 * Description: This top level module incorporates the ports referenced from the
@@ -10,8 +10,7 @@
 * 'embsys_i'. When asserting buttons BTN0 and BTN1, a reset signal is set HI.
 * In the block design 'embsys_i', the IP block Nexys4IO supports the Nexys A7
 * FGPA board. This board includes a 5th button BTNC. So for the Boolean board,
-* this is set low. Since the MPU-6050 sensor utilizes I2C, we introduce the
-* signals 'sclk_io' and 'sda_io'. Check the booleanfpga.xdc file for more
+* this is set low. Check the booleanfpga.xdc file for more
 * information on these signals.
 *
 */
@@ -20,22 +19,22 @@
 
 module booleanfpga
 (
-    input  logic		 clk,       // 100 MHz CLK
+    input  logic         clk,         // 100 MHz CLK
     input  logic         UART0_rxd,   // USB UART Reciever
     output logic         UART0_txd,   // USB UART Transmitter
     input  logic         UART1_rxd,   // PMOD A UART Reciever
     output logic         UART1_txd,   // PMOD A UART Transmitter
-    input  logic [15:0]	 sw,		// slide switches
-    input  logic 		 btn0,	    // BTNU on Nexys A7
-    input  logic 		 btn1,	    // BTNR on Nexys A7
-    input  logic 		 btn2,	    // BTNL on Nexys A7
-    input  logic 		 btn3,	    // BTND on Nexys A7
-    output logic [15:0]	 led,	    // green LEDs
-    output logic 		 RGB0_Blue, RGB0_Green, RGB0_Red,	// RGB1 on Nexys A7
-	output logic 		 RGB1_Blue, RGB1_Green, RGB1_Red,	// RGB2 on Nexys A7
-	output logic [7:0]	 AN,		// Anodes for 7-segment displays
-	output logic		 CA, CB, CC, CD, CE, CF, CG, DP,			    // Cathodes for first 4-digit displays
-	output logic		 CA_1, CB_1, CC_1, CD_1, CE_1, CF_1, CG_1, DP_1,	// Cathodes for second 4-digit display
+    input  logic [15:0]	 sw,	      // slide switches
+    input  logic         btn0,	      // BTNU on Nexys A7
+    input  logic 	 btn1,	      // BTNR on Nexys A7
+    input  logic         btn2,	      // BTNL on Nexys A7
+    input  logic         btn3,	      // BTND on Nexys A7
+    output logic [15:0]	 led,	      // green LEDs
+    output logic 	 RGB0_Blue, RGB0_Green, RGB0_Red,	// RGB1 on Nexys A7
+    output logic 	 RGB1_Blue, RGB1_Green, RGB1_Red,	// RGB2 on Nexys A7
+    output logic [7:0]	 AN,		// Anodes for 7-segment displays
+    output logic	 CA, CB, CC, CD, CE, CF, CG, DP,			    // Cathodes for first 4-digit displays
+    output logic     CA_1, CB_1, CC_1, CD_1, CE_1, CF_1, CG_1, DP_1	// Cathodes for second 4-digit display
  );
   
   wire btnCpuReset;
