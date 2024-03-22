@@ -1,3 +1,19 @@
+/**
+ * @file main.cpp
+ * @brief This file includes the setup and main loop for a BLE (Bluetooth Low Energy) client application using ESP32.
+ *        It establishes a BLE connection to a server, in this case a specifically named device, to transmit and receive data.
+ *        The application is designed to communicate with an FPGA through UART, receiving data from the BLE server
+ *        and forwarding it to the FPGA. It also supports sending data back to the BLE server. The code includes
+ *        initialization of BLE and UART, scanning for BLE devices, connecting to a specified BLE server using its
+ *        UUIDs for services and characteristics, and handling data transmission.
+ *
+ *        UUIDs for the BLE service and its characteristics are defined for communication. Callback functions are
+ *        implemented to handle BLE notifications and data forwarding. The main loop manages the connection state
+ *        and data transmission between the ESP32 and the FPGA over UART. 
+ *
+ * @note Replace the UUIDs with those of your BLE server device. Ensure that the UART pins used match your hardware
+ *       configuration. Adjust the device name and BLE scanning settings as required for your specific use case.
+ */
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEScan.h>
@@ -13,13 +29,13 @@ HardwareSerial FPGA(1); // Use UART1 for communication
 #define CHARACTERISTIC_UUID_TX "AE40D235-6AA7-4764-89AB-108562631979" // Server TX, Client RX
 #define CHARACTERISTIC_UUID_RX "12345678-1234-5678-1234-56789abcdef0" // Server RX, Client TX
 
-static BLEAddress *pServerAddress;
-static boolean doConnect = false;
-static boolean connected = false;
-static boolean doScan = false;
-static std::string myDeviceName = "ESP32_BNO055_BLE";
-static BLERemoteCharacteristic* pRemoteCharacteristicTX = nullptr; // For receiving notifications
-static BLERemoteCharacteristic* pRemoteCharacteristicRX = nullptr; // For sending data
+static BLEAddress *pServerAddress; // Pointer to store the BLE server's address
+static boolean doConnect = false; // Flag to initiate connection to the server
+static boolean connected = false; // Flag to indicate connection status
+static boolean doScan = false; // Flag to initiate scanning for BLE devices
+static std::string myDeviceName = "ESP32_BNO055_BLE"; // Name of the device to connect to
+static BLERemoteCharacteristic* pRemoteCharacteristicTX = nullptr; // Pointer to the characteristic for receiving notifications
+static BLERemoteCharacteristic* pRemoteCharacteristicRX = nullptr; // Pointer to the characteristic for sending data
 
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID(SERVICE_UUID);
@@ -30,6 +46,7 @@ static BLEUUID    charUUID(CHARACTERISTIC_UUID_RX);
 String dataBuffer = "";
 const char delimiter = '\n'; // Delimiter to indicate end of a message
 
+// Callback function for processing notifications received from the BLE server
 void notifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify) {
     Serial.print("Forwarding ");
     Serial.print(length);
@@ -47,6 +64,7 @@ void notifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* 
     Serial.println();
 }
 
+// Attempts to connect to the BLE server using its address
 bool connectToServer(BLEAddress pAddress) {
     Serial.print("Forming a connection to ");
     Serial.println(pAddress.toString().c_str());
@@ -54,11 +72,11 @@ bool connectToServer(BLEAddress pAddress) {
     BLEClient*  pClient  = BLEDevice::createClient();
     Serial.println(" - Created client");
 
-    // Connect to the remove BLE Server.
+    // Connect to the remote BLE Server.
     pClient->connect(pAddress);
     Serial.println(" - Connected to server");
 
-    // Obtain a reference to the service we are after in the remote BLE server.
+    // Attempt to discover the service we are interested in on the remote server
     BLERemoteService* pRemoteService = pClient->getService(serviceUUID);
     if (pRemoteService == nullptr) {
       Serial.print("Failed to find our service UUID: ");
@@ -74,6 +92,7 @@ bool connectToServer(BLEAddress pAddress) {
       return false;
     }
 
+    // Register for notifications on the TX characteristic
     if (pRemoteCharacteristicTX != nullptr) {
     pRemoteCharacteristicTX->registerForNotify(notifyCallback);
     }
@@ -90,7 +109,7 @@ bool connectToServer(BLEAddress pAddress) {
     return true;
     }
 
-
+// Custom callbacks for handling discovered BLE devices during scanning
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
     Serial.print("BLE Device found: ");
@@ -107,20 +126,24 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   }
 };
 
+// Defines a class to handle notifications from the BLE server's characteristics.
 class MyClientCallback: public BLECharacteristicCallbacks {
+
     void onNotify(BLECharacteristic* pCharacteristic) override {
         std::string value = pCharacteristic->getValue();
         if (value.length() > 0) {
+          // Print the notification
             Serial.print("Notification: ");
             for (auto c: value) {
                 Serial.print(c);
             }
+            // Newline for readability
             Serial.println();
         }
     }
 };
 
-
+// Setup[ function]
 void setup() {
   Serial.begin(115200);
   FPGA.begin(115200, SERIAL_8N1, UART_RX_PIN, UART_TX_PIN); // Initialize UART for FPGA communication
@@ -134,6 +157,7 @@ void setup() {
   pBLEScan->start(30, false); // Scan for 30 seconds and then stop
 }
 
+// Main loop
 void loop() {
   if (doConnect) {
     if (connectToServer(*pServerAddress)) {

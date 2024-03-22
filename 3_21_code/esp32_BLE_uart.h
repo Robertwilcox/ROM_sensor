@@ -2,7 +2,7 @@
  * @file esp32_BLE_uart.h
  * @brief Header file for interfacing with an ESP32 over UART for BLE communication.
  *
- * @author Robert Wilcox
+ * @author Robert Wilcox, Ibrahim Binmahfood
  * @version 1.0
  * @date 3.12.2024
  */
